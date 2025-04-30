@@ -1,0 +1,216 @@
+2025-04-24 00:01:15.916 +07:00 [INF] User profile is available. Using 'C:\Users\abc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-24 00:01:16.153 +07:00 [INF] Now listening on: https://localhost:7257
+2025-04-24 00:01:16.154 +07:00 [INF] Now listening on: http://localhost:5287
+2025-04-24 00:01:16.295 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-24 00:01:16.295 +07:00 [INF] Hosting environment: Development
+2025-04-24 00:01:16.296 +07:00 [INF] Content root path: C:\Users\abc\Desktop\Doan\bepkhoibackend\BepKhoiBackend\BepKhoiBackend.API\
+2025-04-24 00:01:16.865 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/swagger/index.html - -
+2025-04-24 00:01:17.078 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/swagger/index.html - - - 200 - text/html;charset=utf-8 216.1369ms
+2025-04-24 00:01:17.101 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/_framework/aspnetcore-browser-refresh.js - -
+2025-04-24 00:01:17.114 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/_framework/aspnetcore-browser-refresh.js - - - 200 16521 application/javascript;+charset=utf-8 11.8344ms
+2025-04-24 00:01:17.294 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/_vs/browserLink - -
+2025-04-24 00:01:17.339 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 44.4254ms
+2025-04-24 00:01:17.397 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/swagger/v1/swagger.json - -
+2025-04-24 00:01:17.438 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 40.8017ms
+2025-04-24 00:01:29.623 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/api/orders/filter-by-date-and-order-id?orderId=1 - -
+2025-04-24 00:01:29.790 +07:00 [INF] Executing endpoint 'BepKhoiBackend.API.Controllers.OrderControllers.OrderController.FilterOrdersByDateAsync (BepKhoiBackend.API)'
+2025-04-24 00:01:29.808 +07:00 [INF] Route matched with {action = "FilterOrdersByDate", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FilterOrdersByDateAsync(System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime], System.Nullable`1[System.Int32]) on controller BepKhoiBackend.API.Controllers.OrderControllers.OrderController (BepKhoiBackend.API).
+2025-04-24 00:01:30.882 +07:00 [INF] Entity Framework Core 6.0.0 initialized 'bepkhoiContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-04-24 00:01:31.588 +07:00 [INF] Executed DbCommand (62ms) [Parameters=[@__orderId_Value_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Order_id], [o].[Amount_due], [o].[Created_time], [o].[Customer_id], [o].[Delivery_information_id], [o].[Order_note], [o].[Order_status_id], [o].[Order_type_id], [o].[Room_id], [o].[Shipper_id], [o].[Total_quantity]
+FROM [Order] AS [o]
+WHERE [o].[Order_id] = @__orderId_Value_0
+ORDER BY [o].[Created_time]
+2025-04-24 00:01:31.653 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType14`3[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[BepKhoiBackend.BusinessObject.dtos.OrderDto.OrderDto, BepKhoiBackend.BusinessObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-24 00:01:31.675 +07:00 [INF] Executed action BepKhoiBackend.API.Controllers.OrderControllers.OrderController.FilterOrdersByDateAsync (BepKhoiBackend.API) in 1860.5322ms
+2025-04-24 00:01:31.677 +07:00 [INF] Executed endpoint 'BepKhoiBackend.API.Controllers.OrderControllers.OrderController.FilterOrdersByDateAsync (BepKhoiBackend.API)'
+2025-04-24 00:01:31.687 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/api/orders/filter-by-date-and-order-id?orderId=1 - - - 200 - application/json;+charset=utf-8 2064.0181ms
+2025-04-24 00:01:49.096 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/api/orders/filter-by-date-and-order-id?fromDate=2025-03-08&toDate=2025-04-08 - -
+2025-04-24 00:01:49.105 +07:00 [INF] Executing endpoint 'BepKhoiBackend.API.Controllers.OrderControllers.OrderController.FilterOrdersByDateAsync (BepKhoiBackend.API)'
+2025-04-24 00:01:49.105 +07:00 [INF] Route matched with {action = "FilterOrdersByDate", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FilterOrdersByDateAsync(System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime], System.Nullable`1[System.Int32]) on controller BepKhoiBackend.API.Controllers.OrderControllers.OrderController (BepKhoiBackend.API).
+2025-04-24 00:01:49.116 +07:00 [INF] Entity Framework Core 6.0.0 initialized 'bepkhoiContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-04-24 00:01:49.128 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__fromDate_Value_0='?' (DbType = DateTime), @__AddTicks_1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Order_id], [o].[Amount_due], [o].[Created_time], [o].[Customer_id], [o].[Delivery_information_id], [o].[Order_note], [o].[Order_status_id], [o].[Order_type_id], [o].[Room_id], [o].[Shipper_id], [o].[Total_quantity]
+FROM [Order] AS [o]
+WHERE ([o].[Created_time] >= @__fromDate_Value_0) AND ([o].[Created_time] <= @__AddTicks_1)
+ORDER BY [o].[Created_time]
+2025-04-24 00:01:49.130 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType14`3[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[BepKhoiBackend.BusinessObject.dtos.OrderDto.OrderDto, BepKhoiBackend.BusinessObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-24 00:01:49.131 +07:00 [INF] Executed action BepKhoiBackend.API.Controllers.OrderControllers.OrderController.FilterOrdersByDateAsync (BepKhoiBackend.API) in 24.276ms
+2025-04-24 00:01:49.133 +07:00 [INF] Executed endpoint 'BepKhoiBackend.API.Controllers.OrderControllers.OrderController.FilterOrdersByDateAsync (BepKhoiBackend.API)'
+2025-04-24 00:01:49.136 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/api/orders/filter-by-date-and-order-id?fromDate=2025-03-08&toDate=2025-04-08 - - - 200 - application/json;+charset=utf-8 39.8990ms
+2025-04-24 00:01:56.608 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/api/orders/filter-by-date-and-order-id?fromDate=2025-03-08&toDate=2025-04-08&orderId=4 - -
+2025-04-24 00:01:56.610 +07:00 [INF] Executing endpoint 'BepKhoiBackend.API.Controllers.OrderControllers.OrderController.FilterOrdersByDateAsync (BepKhoiBackend.API)'
+2025-04-24 00:01:56.611 +07:00 [INF] Route matched with {action = "FilterOrdersByDate", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FilterOrdersByDateAsync(System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime], System.Nullable`1[System.Int32]) on controller BepKhoiBackend.API.Controllers.OrderControllers.OrderController (BepKhoiBackend.API).
+2025-04-24 00:01:56.652 +07:00 [INF] Entity Framework Core 6.0.0 initialized 'bepkhoiContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-04-24 00:01:56.659 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__fromDate_Value_0='?' (DbType = DateTime), @__AddTicks_1='?' (DbType = DateTime), @__orderId_Value_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Order_id], [o].[Amount_due], [o].[Created_time], [o].[Customer_id], [o].[Delivery_information_id], [o].[Order_note], [o].[Order_status_id], [o].[Order_type_id], [o].[Room_id], [o].[Shipper_id], [o].[Total_quantity]
+FROM [Order] AS [o]
+WHERE (([o].[Created_time] >= @__fromDate_Value_0) AND ([o].[Created_time] <= @__AddTicks_1)) AND ([o].[Order_id] = @__orderId_Value_2)
+ORDER BY [o].[Created_time]
+2025-04-24 00:01:56.661 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType14`3[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[BepKhoiBackend.BusinessObject.dtos.OrderDto.OrderDto, BepKhoiBackend.BusinessObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-24 00:01:56.661 +07:00 [INF] Executed action BepKhoiBackend.API.Controllers.OrderControllers.OrderController.FilterOrdersByDateAsync (BepKhoiBackend.API) in 49.8808ms
+2025-04-24 00:01:56.662 +07:00 [INF] Executed endpoint 'BepKhoiBackend.API.Controllers.OrderControllers.OrderController.FilterOrdersByDateAsync (BepKhoiBackend.API)'
+2025-04-24 00:01:56.663 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/api/orders/filter-by-date-and-order-id?fromDate=2025-03-08&toDate=2025-04-08&orderId=4 - - - 200 - application/json;+charset=utf-8 54.8317ms
+2025-04-24 18:51:31.820 +07:00 [INF] User profile is available. Using 'C:\Users\abc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-24 18:51:31.985 +07:00 [INF] Now listening on: https://localhost:7257
+2025-04-24 18:51:31.986 +07:00 [INF] Now listening on: http://localhost:5287
+2025-04-24 18:51:32.095 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-24 18:51:32.095 +07:00 [INF] Hosting environment: Development
+2025-04-24 18:51:32.096 +07:00 [INF] Content root path: C:\Users\abc\Desktop\Doan\bepkhoibackend\BepKhoiBackend\BepKhoiBackend.API\
+2025-04-24 18:51:33.305 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/swagger/index.html - -
+2025-04-24 18:51:33.504 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/swagger/index.html - - - 200 - text/html;charset=utf-8 203.9013ms
+2025-04-24 18:51:33.521 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/_framework/aspnetcore-browser-refresh.js - -
+2025-04-24 18:51:33.524 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/_framework/aspnetcore-browser-refresh.js - - - 200 16521 application/javascript;+charset=utf-8 3.1311ms
+2025-04-24 18:51:33.757 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/_vs/browserLink - -
+2025-04-24 18:51:33.805 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 48.5088ms
+2025-04-24 18:51:33.837 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/swagger/v1/swagger.json - -
+2025-04-24 18:51:33.877 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 40.0902ms
+2025-04-24 18:52:00.605 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7257/api/Passwords/forgot-password application/json 23
+2025-04-24 18:52:00.633 +07:00 [INF] CORS policy execution failed.
+2025-04-24 18:52:00.633 +07:00 [INF] Request origin https://localhost:7257 does not have permission to access the resource.
+2025-04-24 18:52:00.679 +07:00 [INF] Executing endpoint 'BepKhoiBackend.API.Controllers.LoginControllers.PasswordsController.ForgotPassword (BepKhoiBackend.API)'
+2025-04-24 18:52:00.696 +07:00 [INF] Route matched with {action = "ForgotPassword", controller = "Passwords"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgotPassword(System.String) on controller BepKhoiBackend.API.Controllers.LoginControllers.PasswordsController (BepKhoiBackend.API).
+2025-04-24 18:52:01.495 +07:00 [INF] Entity Framework Core 6.0.0 initialized 'bepkhoiContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-04-24 18:52:02.028 +07:00 [INF] Executed DbCommand (49ms) [Parameters=[@__email_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[User_id], [u].[create_date], [u].[email], [u].[isDelete], [u].[is_verify], [u].[password], [u].[phone], [u].[role_id], [u].[status], [u].[user_information_id], [u0].[role_id], [u0].[isDelete], [u0].[role_name], [u1].[User_information_id], [u1].[Address], [u1].[Date_of_birth], [u1].[District], [u1].[Province_City], [u1].[User_name], [u1].[Ward_Commune]
+FROM [User] AS [u]
+INNER JOIN [User_role] AS [u0] ON [u].[role_id] = [u0].[role_id]
+INNER JOIN [User_information] AS [u1] ON [u].[user_information_id] = [u1].[User_information_id]
+WHERE [u].[email] = @__email_0
+2025-04-24 18:52:02.188 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[@p9='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?' (Size = 255), @p2='?' (DbType = Boolean), @p3='?' (DbType = Boolean), @p4='?' (Size = 255), @p5='?' (Size = 20), @p6='?' (DbType = Int32), @p7='?' (DbType = Boolean), @p8='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [User] SET [create_date] = @p0, [email] = @p1, [isDelete] = @p2, [is_verify] = @p3, [password] = @p4, [phone] = @p5, [role_id] = @p6, [status] = @p7, [user_information_id] = @p8
+WHERE [User_id] = @p9;
+SELECT @@ROWCOUNT;
+2025-04-24 18:52:05.893 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-24 18:52:05.899 +07:00 [INF] Executed action BepKhoiBackend.API.Controllers.LoginControllers.PasswordsController.ForgotPassword (BepKhoiBackend.API) in 5199.3259ms
+2025-04-24 18:52:05.900 +07:00 [INF] Executed endpoint 'BepKhoiBackend.API.Controllers.LoginControllers.PasswordsController.ForgotPassword (BepKhoiBackend.API)'
+2025-04-24 18:52:05.905 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7257/api/Passwords/forgot-password application/json 23 - 200 - application/json;+charset=utf-8 5300.3722ms
+2025-04-24 19:10:06.741 +07:00 [INF] User profile is available. Using 'C:\Users\abc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-24 19:10:07.083 +07:00 [INF] Now listening on: https://localhost:7257
+2025-04-24 19:10:07.084 +07:00 [INF] Now listening on: http://localhost:5287
+2025-04-24 19:10:07.281 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-24 19:10:07.281 +07:00 [INF] Hosting environment: Development
+2025-04-24 19:10:07.282 +07:00 [INF] Content root path: C:\Users\abc\Desktop\Doan\bepkhoibackend\BepKhoiBackend\BepKhoiBackend.API\
+2025-04-24 19:10:07.638 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/swagger/index.html - -
+2025-04-24 19:10:07.914 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/swagger/index.html - - - 200 - text/html;charset=utf-8 280.5260ms
+2025-04-24 19:10:08.202 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/_framework/aspnetcore-browser-refresh.js - -
+2025-04-24 19:10:08.212 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/_vs/browserLink - -
+2025-04-24 19:10:08.213 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/_framework/aspnetcore-browser-refresh.js - - - 200 16521 application/javascript;+charset=utf-8 11.2436ms
+2025-04-24 19:10:08.268 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 56.1216ms
+2025-04-24 19:10:08.304 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/swagger/v1/swagger.json - -
+2025-04-24 19:10:08.343 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 39.7996ms
+2025-04-24 19:10:41.738 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7257/login application/json 56
+2025-04-24 19:10:41.772 +07:00 [INF] CORS policy execution failed.
+2025-04-24 19:10:41.774 +07:00 [INF] Request origin https://localhost:7257 does not have permission to access the resource.
+2025-04-24 19:10:41.845 +07:00 [INF] Executing endpoint 'BepKhoiBackend.API.Controllers.LoginControllers.AuthController.Login (BepKhoiBackend.API)'
+2025-04-24 19:10:41.862 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(BepKhoiBackend.BusinessObject.dtos.LoginDto.LoginRequestDto) on controller BepKhoiBackend.API.Controllers.LoginControllers.AuthController (BepKhoiBackend.API).
+2025-04-24 19:10:42.969 +07:00 [INF] Entity Framework Core 6.0.0 initialized 'bepkhoiContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-04-24 19:10:43.728 +07:00 [INF] Executed DbCommand (49ms) [Parameters=[@__email_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[User_id], [u].[create_date], [u].[email], [u].[isDelete], [u].[is_verify], [u].[password], [u].[phone], [u].[role_id], [u].[status], [u].[user_information_id], [u0].[role_id], [u0].[isDelete], [u0].[role_name], [u1].[User_information_id], [u1].[Address], [u1].[Date_of_birth], [u1].[District], [u1].[Province_City], [u1].[User_name], [u1].[Ward_Commune]
+FROM [User] AS [u]
+INNER JOIN [User_role] AS [u0] ON [u].[role_id] = [u0].[role_id]
+INNER JOIN [User_information] AS [u1] ON [u].[user_information_id] = [u1].[User_information_id]
+WHERE [u].[email] = @__email_0
+2025-04-24 19:10:43.902 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`5[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-24 19:10:43.913 +07:00 [INF] Executed action BepKhoiBackend.API.Controllers.LoginControllers.AuthController.Login (BepKhoiBackend.API) in 2046.7155ms
+2025-04-24 19:10:43.915 +07:00 [INF] Executed endpoint 'BepKhoiBackend.API.Controllers.LoginControllers.AuthController.Login (BepKhoiBackend.API)'
+2025-04-24 19:10:43.917 +07:00 [INF] Session started; Key:4b2a3126-5372-300b-c128-50150ede8a7a, Id:441a7e42-94e4-65a4-d652-c215ce1fb7c1
+2025-04-24 19:10:43.929 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7257/login application/json 56 - 200 - application/json;+charset=utf-8 2191.1780ms
+2025-04-24 19:11:27.427 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/api/Menu/get-menu-by-id/1 - -
+2025-04-24 19:11:27.517 +07:00 [INF] Executing endpoint 'BepKhoiBackend.API.Controllers.MenuControllers.MenuController.GetMenuById (BepKhoiBackend.API)'
+2025-04-24 19:11:27.522 +07:00 [INF] Route matched with {action = "GetMenuById", controller = "Menu"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMenuById(Int32) on controller BepKhoiBackend.API.Controllers.MenuControllers.MenuController (BepKhoiBackend.API).
+2025-04-24 19:11:33.074 +07:00 [INF] Entity Framework Core 6.0.0 initialized 'bepkhoiContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-04-24 19:11:33.213 +07:00 [INF] Executed DbCommand (37ms) [Parameters=[@__pId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Product_id], [t].[Cost_price], [t].[Description], [t].[IsAvailable], [t].[IsDelete], [t].[Product_category_id], [t].[Product_name], [t].[Product_vat], [t].[Sale_price], [t].[Sell_price], [t].[Status], [t].[Unit_id], [p].[Product_image_id], [p].[Product_id], [p].[Product_image]
+FROM (
+    SELECT TOP(1) [m].[Product_id], [m].[Cost_price], [m].[Description], [m].[IsAvailable], [m].[IsDelete], [m].[Product_category_id], [m].[Product_name], [m].[Product_vat], [m].[Sale_price], [m].[Sell_price], [m].[Status], [m].[Unit_id]
+    FROM [Menu] AS [m]
+    WHERE ([m].[Product_id] = @__pId_0) AND ([m].[IsDelete] = CAST(0 AS bit))
+) AS [t]
+LEFT JOIN [Product_image] AS [p] ON [t].[Product_id] = [p].[Product_id]
+ORDER BY [t].[Product_id]
+2025-04-24 19:19:03.883 +07:00 [INF] User profile is available. Using 'C:\Users\abc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-24 19:19:04.000 +07:00 [INF] Now listening on: https://localhost:7257
+2025-04-24 19:19:04.001 +07:00 [INF] Now listening on: http://localhost:5287
+2025-04-24 19:19:04.109 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-24 19:19:04.110 +07:00 [INF] Hosting environment: Development
+2025-04-24 19:19:04.111 +07:00 [INF] Content root path: C:\Users\abc\Desktop\Doan\bepkhoibackend\BepKhoiBackend\BepKhoiBackend.API\
+2025-04-24 19:19:04.589 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/swagger/index.html - -
+2025-04-24 19:19:04.723 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/swagger/index.html - - - 200 - text/html;charset=utf-8 136.2941ms
+2025-04-24 19:19:04.745 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/_framework/aspnetcore-browser-refresh.js - -
+2025-04-24 19:19:04.747 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/_framework/aspnetcore-browser-refresh.js - - - 200 16521 application/javascript;+charset=utf-8 2.5109ms
+2025-04-24 19:19:04.931 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/_vs/browserLink - -
+2025-04-24 19:19:04.953 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.5827ms
+2025-04-24 19:19:04.988 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/swagger/v1/swagger.json - -
+2025-04-24 19:19:05.028 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 40.4892ms
+2025-04-24 19:19:18.441 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7257/login application/json 56
+2025-04-24 19:19:18.464 +07:00 [INF] CORS policy execution failed.
+2025-04-24 19:19:18.466 +07:00 [INF] Request origin https://localhost:7257 does not have permission to access the resource.
+2025-04-24 19:19:18.484 +07:00 [INF] Executing endpoint 'BepKhoiBackend.API.Controllers.LoginControllers.AuthController.Login (BepKhoiBackend.API)'
+2025-04-24 19:19:18.497 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(BepKhoiBackend.BusinessObject.dtos.LoginDto.LoginRequestDto) on controller BepKhoiBackend.API.Controllers.LoginControllers.AuthController (BepKhoiBackend.API).
+2025-04-24 19:19:19.208 +07:00 [INF] Entity Framework Core 6.0.0 initialized 'bepkhoiContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-04-24 19:19:19.586 +07:00 [INF] Executed DbCommand (24ms) [Parameters=[@__email_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[User_id], [u].[create_date], [u].[email], [u].[isDelete], [u].[is_verify], [u].[password], [u].[phone], [u].[role_id], [u].[status], [u].[user_information_id], [u0].[role_id], [u0].[isDelete], [u0].[role_name], [u1].[User_information_id], [u1].[Address], [u1].[Date_of_birth], [u1].[District], [u1].[Province_City], [u1].[User_name], [u1].[Ward_Commune]
+FROM [User] AS [u]
+INNER JOIN [User_role] AS [u0] ON [u].[role_id] = [u0].[role_id]
+INNER JOIN [User_information] AS [u1] ON [u].[user_information_id] = [u1].[User_information_id]
+WHERE [u].[email] = @__email_0
+2025-04-24 19:19:19.684 +07:00 [INF] Accessing expired session, Key:4b2a3126-5372-300b-c128-50150ede8a7a
+2025-04-24 19:19:19.690 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`5[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-24 19:19:19.696 +07:00 [INF] Executed action BepKhoiBackend.API.Controllers.LoginControllers.AuthController.Login (BepKhoiBackend.API) in 1194.9588ms
+2025-04-24 19:19:19.697 +07:00 [INF] Executed endpoint 'BepKhoiBackend.API.Controllers.LoginControllers.AuthController.Login (BepKhoiBackend.API)'
+2025-04-24 19:19:19.698 +07:00 [INF] Session started; Key:4b2a3126-5372-300b-c128-50150ede8a7a, Id:a94cb655-0443-f378-2df2-77bad476f890
+2025-04-24 19:19:19.701 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7257/login application/json 56 - 200 - application/json;+charset=utf-8 1260.5779ms
+2025-04-24 19:19:32.424 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/api/Menu/get-menu-by-id/2 - -
+2025-04-24 19:19:32.462 +07:00 [INF] Executing endpoint 'BepKhoiBackend.API.Controllers.MenuControllers.MenuController.GetMenuById (BepKhoiBackend.API)'
+2025-04-24 19:19:32.467 +07:00 [INF] Route matched with {action = "GetMenuById", controller = "Menu"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMenuById(Int32) on controller BepKhoiBackend.API.Controllers.MenuControllers.MenuController (BepKhoiBackend.API).
+2025-04-24 19:19:32.556 +07:00 [INF] Entity Framework Core 6.0.0 initialized 'bepkhoiContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-04-24 19:19:32.623 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[@__pId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Product_id], [t].[Cost_price], [t].[Description], [t].[IsAvailable], [t].[IsDelete], [t].[Product_category_id], [t].[Product_name], [t].[Product_vat], [t].[Sale_price], [t].[Sell_price], [t].[Status], [t].[Unit_id], [p].[Product_image_id], [p].[Product_id], [p].[Product_image]
+FROM (
+    SELECT TOP(1) [m].[Product_id], [m].[Cost_price], [m].[Description], [m].[IsAvailable], [m].[IsDelete], [m].[Product_category_id], [m].[Product_name], [m].[Product_vat], [m].[Sale_price], [m].[Sell_price], [m].[Status], [m].[Unit_id]
+    FROM [Menu] AS [m]
+    WHERE ([m].[Product_id] = @__pId_0) AND ([m].[IsDelete] = CAST(0 AS bit))
+) AS [t]
+LEFT JOIN [Product_image] AS [p] ON [t].[Product_id] = [p].[Product_id]
+ORDER BY [t].[Product_id]
+2025-04-24 19:19:32.630 +07:00 [WRN] Couldn't find menu with ID: 2
+2025-04-24 19:19:32.633 +07:00 [INF] Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-24 19:19:32.634 +07:00 [INF] Executed action BepKhoiBackend.API.Controllers.MenuControllers.MenuController.GetMenuById (BepKhoiBackend.API) in 165.949ms
+2025-04-24 19:19:32.635 +07:00 [INF] Executed endpoint 'BepKhoiBackend.API.Controllers.MenuControllers.MenuController.GetMenuById (BepKhoiBackend.API)'
+2025-04-24 19:19:32.637 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/api/Menu/get-menu-by-id/2 - - - 404 - application/json;+charset=utf-8 212.9693ms
+2025-04-24 19:19:37.709 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/api/Menu/get-menu-by-id/3 - -
+2025-04-24 19:19:37.716 +07:00 [INF] Executing endpoint 'BepKhoiBackend.API.Controllers.MenuControllers.MenuController.GetMenuById (BepKhoiBackend.API)'
+2025-04-24 19:19:37.717 +07:00 [INF] Route matched with {action = "GetMenuById", controller = "Menu"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMenuById(Int32) on controller BepKhoiBackend.API.Controllers.MenuControllers.MenuController (BepKhoiBackend.API).
+2025-04-24 19:19:37.752 +07:00 [INF] Entity Framework Core 6.0.0 initialized 'bepkhoiContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-04-24 19:19:37.758 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__pId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Product_id], [t].[Cost_price], [t].[Description], [t].[IsAvailable], [t].[IsDelete], [t].[Product_category_id], [t].[Product_name], [t].[Product_vat], [t].[Sale_price], [t].[Sell_price], [t].[Status], [t].[Unit_id], [p].[Product_image_id], [p].[Product_id], [p].[Product_image]
+FROM (
+    SELECT TOP(1) [m].[Product_id], [m].[Cost_price], [m].[Description], [m].[IsAvailable], [m].[IsDelete], [m].[Product_category_id], [m].[Product_name], [m].[Product_vat], [m].[Sale_price], [m].[Sell_price], [m].[Status], [m].[Unit_id]
+    FROM [Menu] AS [m]
+    WHERE ([m].[Product_id] = @__pId_0) AND ([m].[IsDelete] = CAST(0 AS bit))
+) AS [t]
+LEFT JOIN [Product_image] AS [p] ON [t].[Product_id] = [p].[Product_id]
+ORDER BY [t].[Product_id]
+2025-04-24 19:19:37.786 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[BepKhoiBackend.BusinessObject.dtos.MenuDto.MenuForManagerDto, BepKhoiBackend.BusinessObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-04-24 19:19:37.796 +07:00 [INF] Executed action BepKhoiBackend.API.Controllers.MenuControllers.MenuController.GetMenuById (BepKhoiBackend.API) in 76.7287ms
+2025-04-24 19:19:37.797 +07:00 [INF] Executed endpoint 'BepKhoiBackend.API.Controllers.MenuControllers.MenuController.GetMenuById (BepKhoiBackend.API)'
+2025-04-24 19:19:37.798 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/api/Menu/get-menu-by-id/3 - - - 200 - application/json;+charset=utf-8 88.6138ms
+2025-04-24 19:20:23.097 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/api/Menu/get-menu-by-id/3 - -
+2025-04-24 19:20:23.099 +07:00 [INF] Executing endpoint 'BepKhoiBackend.API.Controllers.MenuControllers.MenuController.GetMenuById (BepKhoiBackend.API)'
+2025-04-24 19:20:23.100 +07:00 [INF] Route matched with {action = "GetMenuById", controller = "Menu"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMenuById(Int32) on controller BepKhoiBackend.API.Controllers.MenuControllers.MenuController (BepKhoiBackend.API).
+2025-04-24 19:20:23.104 +07:00 [INF] Entity Framework Core 6.0.0 initialized 'bepkhoiContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-04-24 19:20:23.108 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__pId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Product_id], [t].[Cost_price], [t].[Description], [t].[IsAvailable], [t].[IsDelete], [t].[Product_category_id], [t].[Product_name], [t].[Product_vat], [t].[Sale_price], [t].[Sell_price], [t].[Status], [t].[Unit_id], [p].[Product_image_id], [p].[Product_id], [p].[Product_image]
+FROM (
+    SELECT TOP(1) [m].[Product_id], [m].[Cost_price], [m].[Description], [m].[IsAvailable], [m].[IsDelete], [m].[Product_category_id], [m].[Product_name], [m].[Product_vat], [m].[Sale_price], [m].[Sell_price], [m].[Status], [m].[Unit_id]
+    FROM [Menu] AS [m]
+    WHERE ([m].[Product_id] = @__pId_0) AND ([m].[IsDelete] = CAST(0 AS bit))
+) AS [t]
+LEFT JOIN [Product_image] AS [p] ON [t].[Product_id] = [p].[Product_id]
+ORDER BY [t].[Product_id]
+2025-04-24 19:20:23.118 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[BepKhoiBackend.BusinessObject.dtos.MenuDto.MenuForManagerDto, BepKhoiBackend.BusinessObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-04-24 19:20:23.119 +07:00 [INF] Executed action BepKhoiBackend.API.Controllers.MenuControllers.MenuController.GetMenuById (BepKhoiBackend.API) in 18.8964ms
+2025-04-24 19:20:23.120 +07:00 [INF] Executed endpoint 'BepKhoiBackend.API.Controllers.MenuControllers.MenuController.GetMenuById (BepKhoiBackend.API)'
+2025-04-24 19:20:23.122 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/api/Menu/get-menu-by-id/3 - - - 200 - application/json;+charset=utf-8 24.4970ms
