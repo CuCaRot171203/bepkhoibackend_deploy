@@ -1,0 +1,12 @@
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Test\bin\Debug\net6.0\BepKhoiBackend.Test.deps.json
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Test\bin\Debug\net6.0\BepKhoiBackend.Test.dll
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Test\bin\Debug\net6.0\BepKhoiBackend.Test.pdb
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Test\obj\Debug\net6.0\BepKhoiBackend.Test.GeneratedMSBuildEditorConfig.editorconfig
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Test\obj\Debug\net6.0\BepKhoiBackend.Test.AssemblyInfoInputs.cache
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Test\obj\Debug\net6.0\BepKhoiBackend.Test.AssemblyInfo.cs
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Test\obj\Debug\net6.0\BepKhoiBackend.Test.csproj.CoreCompileInputs.cache
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Test\obj\Debug\net6.0\BepKhoiBackend.Test.sourcelink.json
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Test\obj\Debug\net6.0\BepKhoiBackend.Test.dll
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Test\obj\Debug\net6.0\refint\BepKhoiBackend.Test.dll
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Test\obj\Debug\net6.0\BepKhoiBackend.Test.pdb
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Test\obj\Debug\net6.0\ref\BepKhoiBackend.Test.dll

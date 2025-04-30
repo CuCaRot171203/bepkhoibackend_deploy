@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "BepKhoiBackend.Shared/1.0.0": {
+        "runtime": {
+          "BepKhoiBackend.Shared.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BepKhoiBackend.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

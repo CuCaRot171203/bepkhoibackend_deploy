@@ -23723,3 +23723,76 @@ WHERE ((([u].[User_id] = @__id_0) AND ([u0].[role_name] = N'manager')) AND (([u]
 2025-04-30 05:28:18.735 +07:00 [INF] Executed action BepKhoiBackend.API.Controllers.UserControllers.ManagerControllers.ManagerController.GetManagerById (BepKhoiBackend.API) in 9.054ms
 2025-04-30 05:28:18.736 +07:00 [INF] Executed endpoint 'BepKhoiBackend.API.Controllers.UserControllers.ManagerControllers.ManagerController.GetManagerById (BepKhoiBackend.API)'
 2025-04-30 05:28:18.737 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/api/Manager/1 - - - 200 - application/json;+charset=utf-8 14.6262ms
+2025-04-30 19:49:56.692 +07:00 [INF] User profile is available. Using 'C:\Users\TungNT\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-30 19:49:56.930 +07:00 [INF] Now listening on: https://localhost:7257
+2025-04-30 19:49:56.932 +07:00 [INF] Now listening on: http://localhost:5287
+2025-04-30 19:49:57.040 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-30 19:49:57.041 +07:00 [INF] Hosting environment: Development
+2025-04-30 19:49:57.042 +07:00 [INF] Content root path: B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.API\
+2025-04-30 19:49:57.240 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/swagger - -
+2025-04-30 19:49:57.382 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/swagger - - - 301 0 - 144.4285ms
+2025-04-30 19:49:57.395 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/swagger/index.html - -
+2025-04-30 19:49:57.441 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/swagger/index.html - - - 200 - text/html;charset=utf-8 46.3682ms
+2025-04-30 19:49:57.480 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/_framework/aspnetcore-browser-refresh.js - -
+2025-04-30 19:49:57.485 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/_framework/aspnetcore-browser-refresh.js - - - 200 12368 application/javascript;+charset=utf-8 4.4339ms
+2025-04-30 19:49:57.499 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/_vs/browserLink - -
+2025-04-30 19:49:57.535 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 35.7259ms
+2025-04-30 19:49:57.667 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/swagger/v1/swagger.json - -
+2025-04-30 19:49:57.813 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 145.8315ms
+2025-04-30 19:50:18.329 +07:00 [INF] Application is shutting down...
+2025-04-30 19:54:20.778 +07:00 [INF] User profile is available. Using 'C:\Users\TungNT\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-30 19:54:20.935 +07:00 [INF] Now listening on: https://localhost:7257
+2025-04-30 19:54:20.935 +07:00 [INF] Now listening on: http://localhost:5287
+2025-04-30 19:54:21.035 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-30 19:54:21.037 +07:00 [INF] Hosting environment: Development
+2025-04-30 19:54:21.038 +07:00 [INF] Content root path: B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.API\
+2025-04-30 19:54:21.376 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/swagger/index.html - -
+2025-04-30 19:54:21.509 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/swagger/index.html - - - 200 - text/html;charset=utf-8 134.7109ms
+2025-04-30 19:54:21.555 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/_framework/aspnetcore-browser-refresh.js - -
+2025-04-30 19:54:21.555 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/_vs/browserLink - -
+2025-04-30 19:54:21.560 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/_framework/aspnetcore-browser-refresh.js - - - 200 12368 application/javascript;+charset=utf-8 4.9606ms
+2025-04-30 19:54:21.584 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 29.1147ms
+2025-04-30 19:54:21.688 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/swagger/v1/swagger.json - -
+2025-04-30 19:54:21.703 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/swagger/favicon-32x32.png - -
+2025-04-30 19:54:21.712 +07:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-04-30 19:54:21.714 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/swagger/favicon-32x32.png - - - 200 628 image/png 10.7014ms
+2025-04-30 19:54:21.804 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 115.4516ms
+2025-04-30 19:54:48.386 +07:00 [INF] Application is shutting down...
+2025-04-30 19:54:54.484 +07:00 [INF] User profile is available. Using 'C:\Users\TungNT\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-30 19:54:54.812 +07:00 [INF] Now listening on: https://localhost:7257
+2025-04-30 19:54:54.812 +07:00 [INF] Now listening on: http://localhost:5287
+2025-04-30 19:54:55.453 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-30 19:54:55.454 +07:00 [INF] Hosting environment: Development
+2025-04-30 19:54:55.455 +07:00 [INF] Content root path: B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.API\
+2025-04-30 19:54:55.594 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/swagger/index.html - -
+2025-04-30 19:54:55.852 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/swagger/index.html - - - 200 - text/html;charset=utf-8 261.5643ms
+2025-04-30 19:54:55.885 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/_framework/aspnetcore-browser-refresh.js - -
+2025-04-30 19:54:55.892 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/_framework/aspnetcore-browser-refresh.js - - - 200 12368 application/javascript;+charset=utf-8 6.6092ms
+2025-04-30 19:54:55.906 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/_vs/browserLink - -
+2025-04-30 19:54:55.978 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 72.4824ms
+2025-04-30 19:54:56.015 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7257/swagger/v1/swagger.json - -
+2025-04-30 19:54:56.216 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7257/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 201.3837ms
+2025-04-30 19:55:27.476 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7257/login application/json 74
+2025-04-30 19:55:27.494 +07:00 [WRN] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2025-04-30 19:55:27.571 +07:00 [INF] CORS policy execution failed.
+2025-04-30 19:55:27.572 +07:00 [INF] Request origin https://localhost:7257 does not have permission to access the resource.
+2025-04-30 19:55:28.393 +07:00 [INF] Executing endpoint 'BepKhoiBackend.API.Controllers.LoginControllers.AuthController.Login (BepKhoiBackend.API)'
+2025-04-30 19:55:28.411 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(BepKhoiBackend.BusinessObject.dtos.LoginDto.LoginRequestDto) on controller BepKhoiBackend.API.Controllers.LoginControllers.AuthController (BepKhoiBackend.API).
+2025-04-30 19:55:29.808 +07:00 [INF] Entity Framework Core 6.0.0 initialized 'bepkhoiContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: None
+2025-04-30 19:55:31.272 +07:00 [INF] Executed DbCommand (53ms) [Parameters=[@__email_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[User_id], [u].[create_date], [u].[email], [u].[isDelete], [u].[is_verify], [u].[password], [u].[phone], [u].[role_id], [u].[status], [u].[user_information_id], [u0].[role_id], [u0].[isDelete], [u0].[role_name], [u1].[User_information_id], [u1].[Address], [u1].[Date_of_birth], [u1].[District], [u1].[Province_City], [u1].[User_name], [u1].[Ward_Commune]
+FROM [User] AS [u]
+INNER JOIN [User_role] AS [u0] ON [u].[role_id] = [u0].[role_id]
+INNER JOIN [User_information] AS [u1] ON [u].[user_information_id] = [u1].[User_information_id]
+WHERE [u].[email] = @__email_0
+2025-04-30 19:55:31.442 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType10`5[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-30 19:55:31.457 +07:00 [INF] Executed action BepKhoiBackend.API.Controllers.LoginControllers.AuthController.Login (BepKhoiBackend.API) in 3039.017ms
+2025-04-30 19:55:31.459 +07:00 [INF] Executed endpoint 'BepKhoiBackend.API.Controllers.LoginControllers.AuthController.Login (BepKhoiBackend.API)'
+2025-04-30 19:55:31.460 +07:00 [INF] Session started; Key:d3dcc8e8-e50c-8e55-22fe-aabed7d9f56a, Id:4722de9c-6a0e-6896-6744-1179f5df317c
+2025-04-30 19:55:31.469 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7257/login application/json 74 - 200 - application/json;+charset=utf-8 3992.4078ms

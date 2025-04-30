@@ -1,0 +1,12 @@
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Shared\bin\Debug\net6.0\BepKhoiBackend.Shared.deps.json
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Shared\bin\Debug\net6.0\BepKhoiBackend.Shared.dll
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Shared\bin\Debug\net6.0\BepKhoiBackend.Shared.pdb
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Shared\obj\Debug\net6.0\BepKhoiBackend.Shared.GeneratedMSBuildEditorConfig.editorconfig
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Shared\obj\Debug\net6.0\BepKhoiBackend.Shared.AssemblyInfoInputs.cache
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Shared\obj\Debug\net6.0\BepKhoiBackend.Shared.AssemblyInfo.cs
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Shared\obj\Debug\net6.0\BepKhoiBackend.Shared.csproj.CoreCompileInputs.cache
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Shared\obj\Debug\net6.0\BepKhoiBackend.Shared.sourcelink.json
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Shared\obj\Debug\net6.0\BepKhoiBackend.Shared.dll
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Shared\obj\Debug\net6.0\refint\BepKhoiBackend.Shared.dll
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Shared\obj\Debug\net6.0\BepKhoiBackend.Shared.pdb
+B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Shared\obj\Debug\net6.0\ref\BepKhoiBackend.Shared.dll
