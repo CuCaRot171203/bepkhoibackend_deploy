@@ -55,7 +55,12 @@ namespace BepKhoiBackend.API.Configurations
         {
             // DbContext
             services.AddDbContext<bepkhoiContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
+                sqlOptions =>
+                {
+                    sqlOptions.EnableRetryOnFailure();
+                }
+                ));
             // Register any Services and Repositories
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAuthService, AuthService>();
