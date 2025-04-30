@@ -92,7 +92,7 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddSignalR();
 
-builder.WebHost.UseUrls("http://0.0.0.0:80");
+builder.WebHost.UseUrls("http://0.0.0.0:5000");
 var app = builder.Build();
 
 app.MapHub<SignalrHub>("/SignalrHub"); // Đăng ký đường dẫn của Hub
