@@ -78,15 +78,15 @@ builder.Services.AddScoped<VnPayService>();
 
 builder.Services.AddAuthorization();
 
-builder.Services.AddCorsPolicy(builder.Configuration);
+//builder.Services.AddCorsPolicy(builder.Configuration);
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(policy =>
+    options.AddPolicy("AllowReactApp", policy =>
     {
-        policy.WithOrigins("http://localhost:3000")
+        policy.WithOrigins("https://www.nhahangbepkhoi.shop")
               .AllowAnyHeader()
               .AllowAnyMethod()
-              .AllowCredentials(); // Quan trọng cho SignalR
+              .AllowCredentials();
     });
 });
 
