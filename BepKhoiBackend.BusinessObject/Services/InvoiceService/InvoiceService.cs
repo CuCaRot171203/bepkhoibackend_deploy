@@ -125,12 +125,12 @@ namespace BepKhoiBackend.BusinessObject.Services.InvoiceService
                 Subtotal = invoice.Subtotal,
                 TotalVat = invoice.TotalVat ?? 0,
                 AmountDue = invoice.AmountDue,
-                InvoiceDetails = invoice.InvoiceDetails.Select(d => new InvoiceDetailPdfDTO
+                InvoiceDetails = invoice.InvoiceDetails?.Select(d => new InvoiceDetailPdfDTO
                 {
-                    ProductName = d.Product != null ? d.Product.ProductName : "Không xác định",
+                    ProductName = d.Product?.ProductName ?? "Không xác định",
                     Quantity = d.Quantity,
                     Price = d.Price
-                }).ToList()
+                }).ToList() ?? new List<InvoiceDetailPdfDTO>()
             };
         }
 
