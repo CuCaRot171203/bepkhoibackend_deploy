@@ -24,6 +24,7 @@ namespace BepKhoiBackend.API.Controllers.InvoiceControllers
             _invoiceService = invoiceService;
             _vnPayService = vnPayService;
             _pdfService = pdfService;
+            
             _hubContext = hubContext;
         }
 

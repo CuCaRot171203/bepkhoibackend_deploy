@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vNfURLthoqE=",
+  "dgSpecHash": "4L6x1HfihCM=",
   "success": true,
   "projectFilePath": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.API\\BepKhoiBackend.API.csproj",
   "expectedPackageFiles": [
@@ -66,6 +66,7 @@
     "C:\\Users\\TungNT\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\TungNT\\.nuget\\packages\\pdfsharp\\6.1.1\\pdfsharp.6.1.1.nupkg.sha512",
     "C:\\Users\\TungNT\\.nuget\\packages\\qrcoder\\1.6.0\\qrcoder.1.6.0.nupkg.sha512",
+    "C:\\Users\\TungNT\\.nuget\\packages\\questpdf\\2025.4.2\\questpdf.2025.4.2.nupkg.sha512",
     "C:\\Users\\TungNT\\.nuget\\packages\\rbush\\4.0.0\\rbush.4.0.0.nupkg.sha512",
     "C:\\Users\\TungNT\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\TungNT\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
