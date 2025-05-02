@@ -10,7 +10,7 @@ namespace BepKhoiBackend.BusinessObject.dtos.RoomAreaDto
     {
         public int RoomAreaId { get; set; }
         public string RoomAreaName { get; set; }
-        public string RoomAreaNote { get; set; }
+        public string? RoomAreaNote { get; set; }
         public bool? IsDelete { get; set; }
     }
 }

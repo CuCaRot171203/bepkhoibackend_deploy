@@ -48,17 +48,24 @@ namespace BepKhoiBackend.API.Controllers.MenuControllers
             [FromQuery] bool? isActive = null,
             [FromQuery] string? productNameOrId = null)
         {
-            var result = await _menuService.GetAllMenusAsync(sortBy, sortDirection, categoryId, isActive, productNameOrId);
-            if (!result.IsSuccess)
-                return NotFound(new { message = result.Message });
-
-            var mappedData = _mapper.Map<IEnumerable<MenuDto>>(result.Data);
-
-            return Ok(new
+            try
             {
-                message = result.Message,
-                data = mappedData
-            });
+                var result = await _menuService.GetAllMenusAsync(sortBy, sortDirection, categoryId, isActive, productNameOrId);
+                if (!result.IsSuccess)
+                    return NotFound(new { message = result.Message });
+
+                var mappedData = _mapper.Map<IEnumerable<MenuDto>>(result.Data);
+
+                return Ok(new
+                {
+                    message = result.Message,
+                    data = mappedData
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
 
         [HttpGet("get-all-menus-customer")]
@@ -69,16 +76,22 @@ namespace BepKhoiBackend.API.Controllers.MenuControllers
         [FromQuery] bool? isActive = null,
         [FromQuery] string? productNameOrId = null)
         {
-            var result = await _menuService.GetAllMenusCustomerAsync(sortBy, sortDirection, categoryId, isActive, productNameOrId);
-
-            if (!result.IsSuccess)
-                return NotFound(new { message = result.Message });
-
-            return Ok(new
+            try
             {
-                message = result.Message,
-                data = result.Data
-            });
+                var result = await _menuService.GetAllMenusCustomerAsync(sortBy, sortDirection, categoryId, isActive, productNameOrId);
+                if (!result.IsSuccess)
+                    return NotFound(new { message = result.Message });
+
+                return Ok(new
+                {
+                    message = result.Message,
+                    data = result.Data
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
 
         [Authorize(Roles = "manager, cashier")]
@@ -130,12 +143,10 @@ namespace BepKhoiBackend.API.Controllers.MenuControllers
             }
             catch (ArgumentException ex)
             {
-                _logger.LogError(ex, $"Invalid argument when finding menu with ID: {pid}");
                 return BadRequest(new { message = ex.Message });
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                _logger.LogError(ex, $"An error occurred while retrieving menu with ID: {pid}");
                 return StatusCode(500, new { message = "An unexpected error occurred while retrieving the menu." });
             }
         }
@@ -259,12 +270,10 @@ namespace BepKhoiBackend.API.Controllers.MenuControllers
             }
             catch (ArgumentException ex)
             {
-                _logger.LogError(ex, "Invalid argument while updating menu.");
                 return BadRequest(new { message = ex.Message });
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Unexpected error while updating menu.");
                 return StatusCode(500, new { message = "An unexpected error occurred while updating the menu." });
             }
         }
@@ -314,16 +323,23 @@ namespace BepKhoiBackend.API.Controllers.MenuControllers
             [FromQuery] int? categoryId = null,
             [FromQuery] bool? isActive = null)
         {
-            var (fileContent, fileName, hasData, errorMessage) = await _menuService.ExportActiveProductsToExcelAsync(sortBy, sortDirection, categoryId, isActive);
-
-            if (!string.IsNullOrEmpty(errorMessage))
+            try
             {
-                if (errorMessage.Contains("does not exist")) return BadRequest(new { message = errorMessage });
-                if (errorMessage.Contains("No product data found")) return NotFound(new { message = errorMessage });
-                return StatusCode(500, new { message = errorMessage });
-            }
+                var (fileContent, fileName, hasData, errorMessage) = await _menuService.ExportActiveProductsToExcelAsync(sortBy, sortDirection, categoryId, isActive);
 
-            return File(fileContent, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+                if (!string.IsNullOrEmpty(errorMessage))
+                {
+                    if (errorMessage.Contains("does not exist")) return BadRequest(new { message = errorMessage });
+                    if (errorMessage.Contains("No product data found")) return NotFound(new { message = errorMessage });
+                    return StatusCode(500, new { message = errorMessage });
+                }
+
+                return File(fileContent, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
 
 
@@ -337,18 +353,23 @@ namespace BepKhoiBackend.API.Controllers.MenuControllers
             [FromQuery] int? categoryId = null,
             [FromQuery] bool? isActive = null)
         {
-            var (fileContent, fileName, hasData, errorMessage) = await _menuService.ExportPriceExcelAsync(sortBy, sortDirection, categoryId, isActive);
-
-            if (!string.IsNullOrEmpty(errorMessage))
+            try
             {
-                if (errorMessage.Contains("does not exist"))
-                    return BadRequest(new { message = errorMessage });
-                if (errorMessage.Contains("No product price data found"))
-                    return NotFound(new { message = errorMessage });
-                return StatusCode(500, new { message = errorMessage });
+                var (fileContent, fileName, hasData, errorMessage) = await _menuService.ExportPriceExcelAsync(sortBy, sortDirection, categoryId, isActive);
+                if (!string.IsNullOrEmpty(errorMessage))
+                {
+                    if (errorMessage.Contains("does not exist"))
+                        return BadRequest(new { message = errorMessage });
+                    if (errorMessage.Contains("No product price data found"))
+                        return NotFound(new { message = errorMessage });
+                    return StatusCode(500, new { message = errorMessage });
+                }
+                return File(fileContent, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
             }
-
-            return File(fileContent, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
 
         // API to update price of product
@@ -484,5 +505,76 @@ namespace BepKhoiBackend.API.Controllers.MenuControllers
             }
         }
 
+
+        //Create, update, delete product category function
+        [HttpPost]
+        public async Task<IActionResult> AddProductCategory([FromQuery] int id, [FromQuery] string title)
+        {
+            try
+            {
+                await _menuService.AddProductCategoryAsync(id, title);
+                return Ok(new { message = "Thêm danh mục thành công." });
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Đã xảy ra lỗi nội bộ.", detail = ex.Message });
+            }
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateProductCategory([FromQuery] int id, [FromQuery] string title)
+        {
+            try
+            {
+                await _menuService.UpdateProductCategoryAsync(id, title);
+                return Ok(new { message = "Cập nhật danh mục thành công." });
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Đã xảy ra lỗi nội bộ.", detail = ex.Message });
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProductCategory(int id)
+        {
+            try
+            {
+                await _menuService.SoftDeleteProductCategoryAsync(id);
+                return Ok(new { message = "Xóa mềm danh mục thành công." });
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Đã xảy ra lỗi nội bộ.", detail = ex.Message });
+            }
+        }
     }
 }

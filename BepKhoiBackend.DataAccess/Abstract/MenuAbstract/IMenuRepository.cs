@@ -24,5 +24,10 @@ namespace BepKhoiBackend.DataAccess.Abstract.MenuAbstract
 
         Task<bool> DeleteImageByIdAsync(int ProductId);
         Task<Menu?> GetMenuByIdForUpdatePriceAsync(int pId);
+
+        //Create, update, delete product category function
+        Task AddProductCategoryAsync(int productCategoryId, string productCategoryTitle);
+        Task UpdateProductCategoryAsync(int productCategoryId, string newTitle);
+        Task SoftDeleteProductCategoryAsync(int productCategoryId);
     }
 }

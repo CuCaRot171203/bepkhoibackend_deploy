@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "t1fYD55/sUY=",
+  "dgSpecHash": "CCpf/9RKZ9KwFsMIEdH/BGJkWC608HT1HXj5flfw2UM2MVVRxbyFgULTEnQxtbtaCeVLRMFozddauEZOJlPYhw==",
   "success": true,
-  "projectFilePath": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.Shared\\BepKhoiBackend.Shared.csproj",
+  "projectFilePath": "C:\\Users\\phams\\Desktop\\backend_deploy_code\\bepkhoibackend_deploy\\BepKhoiBackend.Shared\\BepKhoiBackend.Shared.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

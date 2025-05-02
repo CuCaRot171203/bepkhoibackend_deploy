@@ -35,16 +35,23 @@ namespace BepKhoiBackend.API.Controllers.OrderControllers
         [HttpGet("get-all-orders")]
         public async Task<IActionResult> GetAllOrdersAsync()
         {
-            var result = await _orderService.GetAllOrdersAsync();
-
-            if (!result.IsSuccess)
-                return NotFound(new { message = result.Message });
-
-            return Ok(new
+            try
             {
-                message = result.Message,
-                data = result.Data
-            });
+                var result = await _orderService.GetAllOrdersAsync();
+
+                if (!result.IsSuccess)
+                    return NotFound(new { message = result.Message });
+
+                return Ok(new
+                {
+                    message = result.Message,
+                    data = result.Data
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
 
         [Authorize(Roles = "manager, cashier")]
@@ -54,24 +61,31 @@ namespace BepKhoiBackend.API.Controllers.OrderControllers
         [FromQuery] DateTime? toDate = null,
         [FromQuery] int? orderId = null)
         {
-            // Validate input parameters
-            if (fromDate.HasValue && toDate.HasValue && fromDate > toDate)
+            try
             {
-                return BadRequest(new { message = "From date cannot be later than to date" });
-            }
+                // Validate input parameters
+                if (fromDate.HasValue && toDate.HasValue && fromDate > toDate)
+                {
+                    return BadRequest(new { message = "From date cannot be later than to date" });
+                }
 
-            if (orderId.HasValue && orderId <= 0)
-            {
-                return BadRequest(new { message = "Order ID must be a positive integer" });
-            }
+                if (orderId.HasValue && orderId <= 0)
+                {
+                    return BadRequest(new { message = "Order ID must be a positive integer" });
+                }
 
-            var result = await _orderService.FilterOrdersByDateAsync(fromDate, toDate, orderId);
-            return Ok(new
+                var result = await _orderService.FilterOrdersByDateAsync(fromDate, toDate, orderId);
+                return Ok(new
+                {
+                    message = result.Message,
+                    data = result.Data,
+                    count = result.Data?.Count ?? 0
+                });
+            }
+            catch (Exception ex)
             {
-                message = result.Message,
-                data = result.Data,
-                count = result.Data?.Count ?? 0
-            });
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
 
         [Authorize]

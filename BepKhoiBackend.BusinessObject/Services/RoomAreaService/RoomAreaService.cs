@@ -29,7 +29,7 @@ namespace BepKhoiBackend.BusinessObject.Services.RoomAreaService
             }).ToList();
         }
 
-        public async Task<RoomAreaDto> GetByIdAsync(int id)
+        public async Task<RoomAreaDto?> GetByIdAsync(int id)
         {
             var roomArea = await _roomAreaRepository.GetByIdAsync(id);
             if (roomArea == null) return null;

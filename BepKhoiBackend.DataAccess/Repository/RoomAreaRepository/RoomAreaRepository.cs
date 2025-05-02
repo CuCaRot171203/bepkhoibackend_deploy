@@ -26,7 +26,7 @@ namespace BepKhoiBackend.DataAccess.Repository.RoomAreaRepository
                 .ToListAsync();
         }
 
-        public async Task<RoomArea> GetByIdAsync(int id)
+        public async Task<RoomArea?> GetByIdAsync(int id)
         {
             return await _context.RoomAreas.FirstOrDefaultAsync(r => r.RoomAreaId == id && r.IsDelete == false);
         }

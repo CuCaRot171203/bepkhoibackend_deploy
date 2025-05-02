@@ -132,7 +132,6 @@ namespace BepKhoiBackend.API.Configurations
             //pdf print
             services.AddScoped<PrintInvoicePdfService>();
             services.AddScoped<PrintOrderPdfService>();
-            services.AddScoped<InvoiceDocument>();
             //VnPay
             services.AddScoped<VnPayService>();
         }

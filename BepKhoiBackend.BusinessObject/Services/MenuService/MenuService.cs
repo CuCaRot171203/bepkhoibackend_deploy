@@ -144,8 +144,17 @@ namespace BepKhoiBackend.BusinessObject.Services.MenuService
                     query = query.Where(m => m.ProductName.ToLower().Contains(searchValue));
                 }
 
-
                 var dataMenuImage = await query.Include(m => m.ProductImages).ToListAsync();
+
+                if (!string.IsNullOrEmpty(productNameOrId) && !ProductValidator.IsPositiveInteger(productNameOrId.Trim()))
+                {
+                    var searchValue = productNameOrId.Trim().ToLower();
+                    var searchNoSign = DataAccess.Helpers.StringHelper.RemoveDiacritics(searchValue);
+
+                    data = data.Where(m =>
+                        DataAccess.Helpers.StringHelper.RemoveDiacritics(m.ProductName.ToLower()).Contains(searchNoSign)
+                    ).ToList();
+                }
 
                 var mappedData = dataMenuImage.Select(m => new MenuCustomerDto
                 {
@@ -680,5 +689,21 @@ namespace BepKhoiBackend.BusinessObject.Services.MenuService
             return menuDtoList;
         }
 
+
+        //Create, update, delete product category function
+        public Task AddProductCategoryAsync(int productCategoryId, string productCategoryTitle)
+        {
+            return _menuRepository.AddProductCategoryAsync(productCategoryId, productCategoryTitle);
+        }
+
+        public Task UpdateProductCategoryAsync(int productCategoryId, string productCategoryTitle)
+        {
+            return _menuRepository.UpdateProductCategoryAsync(productCategoryId, productCategoryTitle);
+        }
+
+        public Task SoftDeleteProductCategoryAsync(int productCategoryId)
+        {
+            return _menuRepository.SoftDeleteProductCategoryAsync(productCategoryId);
+        }
     }
 }

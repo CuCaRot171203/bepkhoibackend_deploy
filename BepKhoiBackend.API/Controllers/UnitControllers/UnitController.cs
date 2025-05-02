@@ -17,8 +17,15 @@ namespace BepKhoiBackend.API.Controllers.UnitControllers
         [HttpGet("get-all-units")]
         public async Task<IActionResult> GetAllUnits()
         {
-            var units = await _unitService.GetUnitsAsync();
-            return Ok(units);
+            try
+            {
+                var units = await _unitService.GetUnitsAsync();
+                return Ok(units);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
     }
 }

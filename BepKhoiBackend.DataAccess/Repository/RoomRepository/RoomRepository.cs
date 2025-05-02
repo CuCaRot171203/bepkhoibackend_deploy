@@ -28,7 +28,7 @@ namespace BepKhoiBackend.DataAccess.Repository.RoomRepository
                 .ToListAsync();
         }
 
-        public async Task<Room> GetByIdAsync(int id)
+        public async Task<Room?> GetByIdAsync(int id)
         {
             return await _context.Rooms
                 .FirstOrDefaultAsync(r => r.RoomId == id && r.IsDelete == false);

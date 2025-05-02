@@ -10,7 +10,7 @@ namespace BepKhoiBackend.DataAccess.Repository.RoomAreaRepository.Interface
     public interface IRoomAreaRepository
     {
         Task<IEnumerable<RoomArea>> GetAllAsync(int limit, int offset);
-        Task<RoomArea> GetByIdAsync(int id);
+        Task<RoomArea?> GetByIdAsync(int id);
         Task AddAsync(RoomArea roomArea);
         Task UpdateAsync(RoomArea roomArea);
         Task<bool> SoftDeleteAsync(int id);

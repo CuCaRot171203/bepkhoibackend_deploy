@@ -7,7 +7,7 @@ namespace BepKhoiBackend.BusinessObject.Services.RoomAreaService
     public interface IRoomAreaService
     {
         Task<IEnumerable<RoomAreaDto>> GetAllAsync(int limit, int offset);
-        Task<RoomAreaDto> GetByIdAsync(int id);
+        Task<RoomAreaDto?> GetByIdAsync(int id);
         Task AddAsync(RoomAreaDto roomAreaDto);
         Task UpdateAsync(RoomAreaDto roomAreaDto);
         Task<bool> SoftDeleteAsync(int id);

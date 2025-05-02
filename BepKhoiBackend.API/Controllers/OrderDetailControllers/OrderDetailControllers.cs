@@ -27,16 +27,23 @@ namespace BepKhoiBackend.API.Controllers.OrderDetailControllers
         [HttpGet("get-by-order-id/{orderId}")]
         public async Task<IActionResult> GetOrderDetailsByOrderId(int orderId)
         {
-            var result = await _orderDetailService.GetOrderDetailsByOrderIdAsync(orderId);
-
-            if (!result.IsSuccess)
-                return NotFound(new { message = result.Message });
-
-            return Ok(new
+            try
             {
-                message = result.Message,
-                data = result.Data
-            });
+                var result = await _orderDetailService.GetOrderDetailsByOrderIdAsync(orderId);
+
+                if (!result.IsSuccess)
+                    return NotFound(new { message = result.Message });
+
+                return Ok(new
+                {
+                    message = result.Message,
+                    data = result.Data
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
 
         [HttpDelete("cancel-order-detail")]

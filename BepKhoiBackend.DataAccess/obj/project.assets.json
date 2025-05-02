@@ -2755,24 +2755,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\TungNT\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\phams\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.DataAccess\\BepKhoiBackend.DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\phams\\Desktop\\backend_deploy_code\\bepkhoibackend_deploy\\BepKhoiBackend.DataAccess\\BepKhoiBackend.DataAccess.csproj",
       "projectName": "BepKhoiBackend.DataAccess",
-      "projectPath": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.DataAccess\\BepKhoiBackend.DataAccess.csproj",
-      "packagesPath": "C:\\Users\\TungNT\\.nuget\\packages\\",
-      "outputPath": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.DataAccess\\obj\\",
+      "projectPath": "C:\\Users\\phams\\Desktop\\backend_deploy_code\\bepkhoibackend_deploy\\BepKhoiBackend.DataAccess\\BepKhoiBackend.DataAccess.csproj",
+      "packagesPath": "C:\\Users\\phams\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\phams\\Desktop\\backend_deploy_code\\bepkhoibackend_deploy\\BepKhoiBackend.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\TungNT\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\phams\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2780,15 +2775,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.Shared\\BepKhoiBackend.Shared.csproj": {
-              "projectPath": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.Shared\\BepKhoiBackend.Shared.csproj"
+            "C:\\Users\\phams\\Desktop\\backend_deploy_code\\bepkhoibackend_deploy\\BepKhoiBackend.Shared\\BepKhoiBackend.Shared.csproj": {
+              "projectPath": "C:\\Users\\phams\\Desktop\\backend_deploy_code\\bepkhoibackend_deploy\\BepKhoiBackend.Shared\\BepKhoiBackend.Shared.csproj"
             }
           }
         }
@@ -2857,7 +2851,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
       }
     }
   }

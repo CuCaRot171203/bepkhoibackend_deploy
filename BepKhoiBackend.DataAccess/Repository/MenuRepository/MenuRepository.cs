@@ -271,4 +271,82 @@ public class MenuRepository : RepositoryBase, IMenuRepository
         return true; // Images deleted successfully
 
     }
+
+
+    //Create, update, delete product category function
+    public async Task AddProductCategoryAsync(int productCategoryId, string productCategoryTitle)
+    {
+        if (string.IsNullOrWhiteSpace(productCategoryTitle))
+            throw new ArgumentException("Tên danh mục không được để trống.");
+
+        var normalizedNewTitle = StringHelper.RemoveDiacritics(productCategoryTitle.Trim().ToLower());
+
+        var isDuplicate = await _context.ProductCategories
+            .Where(c => c.IsDelete != true)
+            .AnyAsync(c =>
+                StringHelper.RemoveDiacritics(c.ProductCategoryTitle.Trim().ToLower()) == normalizedNewTitle);
+
+        if (isDuplicate)
+            throw new InvalidOperationException($"Danh mục '{productCategoryTitle}' đã tồn tại.");
+
+        var newCategory = new ProductCategory
+        {
+            ProductCategoryId = productCategoryId,
+            ProductCategoryTitle = productCategoryTitle,
+            IsDelete = false
+        };
+
+        await _context.ProductCategories.AddAsync(newCategory);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task UpdateProductCategoryAsync(int productCategoryId, string newTitle)
+    {
+        if (string.IsNullOrWhiteSpace(newTitle))
+            throw new ArgumentException("Tên danh mục không được để trống.");
+
+        var existingCategory = await _context.ProductCategories
+            .FirstOrDefaultAsync(c => c.ProductCategoryId == productCategoryId && c.IsDelete != true);
+
+        if (existingCategory == null)
+            throw new KeyNotFoundException($"Không tìm thấy danh mục với ID = {productCategoryId}.");
+
+        var normalizedNewTitle = StringHelper.RemoveDiacritics(newTitle.Trim().ToLower());
+
+        var isDuplicate = await _context.ProductCategories
+            .Where(c => c.ProductCategoryId != productCategoryId && c.IsDelete != true)
+            .AnyAsync(c =>
+                StringHelper.RemoveDiacritics(c.ProductCategoryTitle.Trim().ToLower()) == normalizedNewTitle);
+
+        if (isDuplicate)
+            throw new InvalidOperationException($"Danh mục '{newTitle}' đã tồn tại.");
+
+        existingCategory.ProductCategoryTitle = newTitle;
+
+        _context.ProductCategories.Update(existingCategory);
+        await _context.SaveChangesAsync();
+    }
+
+
+    public async Task SoftDeleteProductCategoryAsync(int productCategoryId)
+    {
+        var category = await _context.ProductCategories
+            .FirstOrDefaultAsync(c => c.ProductCategoryId == productCategoryId && c.IsDelete != true);
+
+        if (category == null)
+            throw new KeyNotFoundException($"Không tìm thấy danh mục với ID = {productCategoryId}.");
+
+        var isInUse = await _context.Menus
+            .AnyAsync(m => m.ProductCategoryId == productCategoryId && m.IsDelete != true);
+
+        if (isInUse)
+            throw new InvalidOperationException("Không thể xóa danh mục vì đang có món ăn sử dụng danh mục này.");
+
+        category.IsDelete = true;
+
+        _context.ProductCategories.Update(category);
+        await _context.SaveChangesAsync();
+    }
+
+
 }

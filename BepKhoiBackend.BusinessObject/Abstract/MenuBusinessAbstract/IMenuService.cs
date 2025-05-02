@@ -26,5 +26,10 @@ namespace BepKhoiBackend.BusinessObject.Abstract.MenuBusinessAbstract
         Task<IEnumerable<MenuPosDto>> GetAllMenuPosAsync();
         Task<List<MenuPosDto>> FilterMenuAsyncPos(int? categoryId, bool? isAvailable);
         Task<IEnumerable<MenuQrDto>> GetAllMenuQrAsync();
+
+        //Create, update, delete product category function
+        Task AddProductCategoryAsync(int productCategoryId, string productCategoryTitle);
+        Task UpdateProductCategoryAsync(int productCategoryId, string productCategoryTitle);
+        Task SoftDeleteProductCategoryAsync(int productCategoryId);
     }
 }

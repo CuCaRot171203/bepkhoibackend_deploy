@@ -91,15 +91,20 @@ namespace BepKhoiBackend.API.Controllers.InvoiceControllers
         [HttpGet("{id}/print-pdf")]
         public IActionResult GetInvoicePdf(int id)
         {
-            var invoice = _invoiceService.GetInvoiceForPdf(id);
-
-            if (invoice == null)
+            try
             {
-                return NotFound($"Không tìm thấy hóa đơn với ID {id}");
+                var invoice = _invoiceService.GetInvoiceForPdf(id);
+                if (invoice == null)
+                {
+                    return NotFound($"Không tìm thấy hóa đơn với ID {id}");
+                }
+                var pdfBytes = _pdfService.GenerateInvoicePdf(invoice);
+                return File(pdfBytes, "application/pdf", $"Invoice_{id}.pdf");
             }
-
-            var pdfBytes = _pdfService.GenerateInvoicePdf(invoice);
-            return File(pdfBytes, "application/pdf", $"Invoice_{id}.pdf");
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Đã xảy ra lỗi khi tạo file PDF: {ex.Message}");
+            }
         }
 
 
@@ -141,69 +146,75 @@ namespace BepKhoiBackend.API.Controllers.InvoiceControllers
         [HttpGet("Return")]
         public async Task<IActionResult> PaymentCallbackVnpay()
         {
-            var response = _vnPayService.PaymentExecute(Request.Query);
-
-            if (response.Success && response.VnPayResponseCode == "00")
+            try
             {
-                if (int.TryParse(response.InvoiceId, out int invoiceId))
+                var response = _vnPayService.PaymentExecute(Request.Query);
+                if (response.Success && response.VnPayResponseCode == "00")
                 {
-                    await _invoiceService.UpdateInvoiceStatus(invoiceId, true);
-                    //Gửi sự kiện thanh toán thành công
-                    await _hubContext.Clients.Group("payment").SendAsync("PaymentStatus", new
+                    if (int.TryParse(response.InvoiceId, out int invoiceId))
                     {
-                        invoiceId = response.InvoiceId,
-                        status = true
-                    });
-                    //Cập nhật lại trạng thái order và iseUse của room
-                    var (invoice, roomUpdateResult) = await _invoiceService.HandleInvoiceVnpayCompletionAsync(invoiceId);
-                    //Gửi sự kiện cập nhật danh sách order 
-                    await _hubContext.Clients.Group("order").SendAsync("OrderListUpdate", new
-                    {
-                        roomId = invoice.RoomId,
-                        shipperId = invoice.ShipperId,
-                        orderStatusId = invoice.OrderTypeId
-                    });
-                    // Gửi sự kiện RoomStatusUpdate nếu có cập nhật trạng thái phòng
-                    if (roomUpdateResult?.roomId != null && roomUpdateResult?.isUse != null)
-                    {
-                        await _hubContext.Clients.Group("room").SendAsync("RoomStatusUpdate", new
+                        await _invoiceService.UpdateInvoiceStatus(invoiceId, true);
+                        //Gửi sự kiện thanh toán thành công
+                        await _hubContext.Clients.Group("payment").SendAsync("PaymentStatus", new
                         {
-                            roomId = roomUpdateResult.Value.roomId!.Value,
-                            isUse = roomUpdateResult.Value.isUse!.Value
+                            invoiceId = response.InvoiceId,
+                            status = true
                         });
-                    }
-                    // Gửi sự kiện CustomerOrderListUpdate nếu có thông tin khách hàng
-                    if (invoice.RoomId.HasValue && invoice.CustomerId.HasValue && invoice.Status == true)
-                    {
-                        await _hubContext.Clients.Group("order").SendAsync("CustomerOrderListUpdate", new
+                        //Cập nhật lại trạng thái order và iseUse của room
+                        var (invoice, roomUpdateResult) = await _invoiceService.HandleInvoiceVnpayCompletionAsync(invoiceId);
+                        //Gửi sự kiện cập nhật danh sách order 
+                        await _hubContext.Clients.Group("order").SendAsync("OrderListUpdate", new
                         {
-                            customerId = invoice.CustomerId
+                            roomId = invoice.RoomId,
+                            shipperId = invoice.ShipperId,
+                            orderStatusId = invoice.OrderTypeId
                         });
+                        // Gửi sự kiện RoomStatusUpdate nếu có cập nhật trạng thái phòng
+                        if (roomUpdateResult?.roomId != null && roomUpdateResult?.isUse != null)
+                        {
+                            await _hubContext.Clients.Group("room").SendAsync("RoomStatusUpdate", new
+                            {
+                                roomId = roomUpdateResult.Value.roomId!.Value,
+                                isUse = roomUpdateResult.Value.isUse!.Value
+                            });
+                        }
+                        // Gửi sự kiện CustomerOrderListUpdate nếu có thông tin khách hàng
+                        if (invoice.RoomId.HasValue && invoice.CustomerId.HasValue && invoice.Status == true)
+                        {
+                            await _hubContext.Clients.Group("order").SendAsync("CustomerOrderListUpdate", new
+                            {
+                                customerId = invoice.CustomerId
+                            });
+                        }
+                        // Redirect đến frontend (ví dụ: trang thanh toán thành công)
+                        var redirectUrl = $"http://localhost:3000/vnpay-result?result=true";
+                        return Redirect(redirectUrl);
                     }
-                    // Redirect đến frontend (ví dụ: trang thanh toán thành công)
-                    var redirectUrl = $"http://localhost:3000/vnpay-result?result=true";
-                    return Redirect(redirectUrl);
+                    else
+                    {
+                        await _hubContext.Clients.Group("payment").SendAsync("PaymentStatus", new
+                        {
+                            invoiceId = response.InvoiceId,
+                            status = false
+                        });
+                        var failUrl = $"http://localhost:3000/vnpay-result?result=false";
+                        return Redirect(failUrl);
+                    }
                 }
-            else
+
+                // Redirect đến trang thất bại
+                await _hubContext.Clients.Group("payment").SendAsync("PaymentStatus", new
                 {
-                    await _hubContext.Clients.Group("payment").SendAsync("PaymentStatus", new
-                    {
-                        invoiceId = response.InvoiceId,
-                        status = false
-                    });
-                    var failUrl = $"http://localhost:3000/vnpay-result?result=false";
-                    return Redirect(failUrl);
-                }
+                    invoiceId = response.InvoiceId,
+                    status = false
+                });
+                var redirectFail = $"http://localhost:3000/vnpay-result?result=false";
+                return Redirect(redirectFail);
             }
-
-            // Redirect đến trang thất bại
-            await _hubContext.Clients.Group("payment").SendAsync("PaymentStatus", new
+            catch (Exception)
             {
-                invoiceId = response.InvoiceId,
-                status = false
-            });
-            var redirectFail = $"http://localhost:3000/vnpay-result?result=false";
-            return Redirect(redirectFail);
+                return StatusCode(500, "Có lỗi xảy ra trong quá trình tạo xử lý thanh toán.");
+            }
         }
 
 

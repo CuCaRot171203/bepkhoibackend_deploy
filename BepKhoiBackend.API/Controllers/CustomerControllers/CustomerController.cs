@@ -98,20 +98,34 @@ namespace BepKhoiBackend.API.Controllers.CustomerControllers
         [HttpGet("{customerId}/invoices")]
         public IActionResult GetInvoicesByCustomerId(int customerId)
         {
-            var invoices = _customerService.GetInvoicesByCustomerId(customerId);
-            if (invoices == null || invoices.Count == 0)
+            try
             {
-                return NotFound("Không tìm thấy hóa đơn nào cho khách hàng này.");
+                var invoices = _customerService.GetInvoicesByCustomerId(customerId);
+                if (invoices == null || invoices.Count == 0)
+                {
+                    return NotFound("Không tìm thấy hóa đơn nào cho khách hàng này.");
+                }
+                return Ok(invoices);
             }
-            return Ok(invoices);
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
 
         [Authorize(Roles = "manager, cashier")]
         [HttpGet("export")]
         public IActionResult ExportCustomers()
         {
-            var fileContents = _customerService.ExportCustomersToExcel();
-            return File(fileContents, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Customers.xlsx");
+            try
+            {
+                var fileContents = _customerService.ExportCustomersToExcel();
+                return File(fileContents, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Customers.xlsx");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
 
         [HttpPost("create-new-customer")]

@@ -18,8 +18,15 @@ namespace BepKhoiBackend.API.Controllers.ProductCategoryControllers
         [HttpGet("get-all-categories")]
         public async Task<IActionResult> GetAllCategories()
         {
-            var categories = await _productCategoryService.GetProductCategoriesAsync();
-            return Ok(categories);
+            try
+            {
+                var categories = await _productCategoryService.GetProductCategoriesAsync();
+                return Ok(categories);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
     }
 }

@@ -19,16 +19,23 @@ namespace BepKhoiBackend.API.Controllers.UserControllers
         [HttpGet("get-user-by-id/{userId}")]
         public async Task<IActionResult> GetUserById(int userId)
         {
-            var userDto = await _userService.GetUserByIdAsync(userId);
-
-            if (userDto == null)
-                return NotFound(new { message = "User not found" });
-
-            return Ok(new
+            try
             {
-                message = "User fetched successfully",
-                data = userDto
-            });
+                var userDto = await _userService.GetUserByIdAsync(userId);
+
+                if (userDto == null)
+                    return NotFound(new { message = "User not found" });
+
+                return Ok(new
+                {
+                    message = "User fetched successfully",
+                    data = userDto
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
 
         //Phạm Sơn Tùng

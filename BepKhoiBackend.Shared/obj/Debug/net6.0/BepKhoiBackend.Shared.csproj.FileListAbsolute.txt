@@ -10,3 +10,15 @@ B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Shared\obj\Debug\net6.0\BepKhoiBacken
 B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Shared\obj\Debug\net6.0\refint\BepKhoiBackend.Shared.dll
 B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Shared\obj\Debug\net6.0\BepKhoiBackend.Shared.pdb
 B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.Shared\obj\Debug\net6.0\ref\BepKhoiBackend.Shared.dll
+C:\Users\phams\Desktop\backend_deploy_code\bepkhoibackend_deploy\BepKhoiBackend.Shared\bin\Debug\net6.0\BepKhoiBackend.Shared.deps.json
+C:\Users\phams\Desktop\backend_deploy_code\bepkhoibackend_deploy\BepKhoiBackend.Shared\bin\Debug\net6.0\BepKhoiBackend.Shared.dll
+C:\Users\phams\Desktop\backend_deploy_code\bepkhoibackend_deploy\BepKhoiBackend.Shared\bin\Debug\net6.0\BepKhoiBackend.Shared.pdb
+C:\Users\phams\Desktop\backend_deploy_code\bepkhoibackend_deploy\BepKhoiBackend.Shared\obj\Debug\net6.0\BepKhoiBackend.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\phams\Desktop\backend_deploy_code\bepkhoibackend_deploy\BepKhoiBackend.Shared\obj\Debug\net6.0\BepKhoiBackend.Shared.AssemblyInfoInputs.cache
+C:\Users\phams\Desktop\backend_deploy_code\bepkhoibackend_deploy\BepKhoiBackend.Shared\obj\Debug\net6.0\BepKhoiBackend.Shared.AssemblyInfo.cs
+C:\Users\phams\Desktop\backend_deploy_code\bepkhoibackend_deploy\BepKhoiBackend.Shared\obj\Debug\net6.0\BepKhoiBackend.Shared.csproj.CoreCompileInputs.cache
+C:\Users\phams\Desktop\backend_deploy_code\bepkhoibackend_deploy\BepKhoiBackend.Shared\obj\Debug\net6.0\BepKhoiBackend.Shared.sourcelink.json
+C:\Users\phams\Desktop\backend_deploy_code\bepkhoibackend_deploy\BepKhoiBackend.Shared\obj\Debug\net6.0\BepKhoiBackend.Shared.dll
+C:\Users\phams\Desktop\backend_deploy_code\bepkhoibackend_deploy\BepKhoiBackend.Shared\obj\Debug\net6.0\refint\BepKhoiBackend.Shared.dll
+C:\Users\phams\Desktop\backend_deploy_code\bepkhoibackend_deploy\BepKhoiBackend.Shared\obj\Debug\net6.0\BepKhoiBackend.Shared.pdb
+C:\Users\phams\Desktop\backend_deploy_code\bepkhoibackend_deploy\BepKhoiBackend.Shared\obj\Debug\net6.0\ref\BepKhoiBackend.Shared.dll

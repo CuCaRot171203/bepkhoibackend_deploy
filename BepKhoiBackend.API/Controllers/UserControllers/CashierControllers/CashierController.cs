@@ -23,8 +23,15 @@ namespace BepKhoiBackend.API.Controllers.UserControllers.CashierControllers
         [HttpGet]
         public ActionResult<IEnumerable<CashierDTO>> GetAllCashiers()
         {
-            var cashiers = _cashierService.GetAllCashiers();
-            return Ok(cashiers);
+            try
+            {
+                var cashiers = _cashierService.GetAllCashiers();
+                return Ok(cashiers);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
 
         [Authorize(Roles = "manager")]
@@ -32,12 +39,19 @@ namespace BepKhoiBackend.API.Controllers.UserControllers.CashierControllers
         [HttpGet("{id}")]
         public ActionResult<CashierDTO> GetCashierById(int id)
         {
-            var cashier = _cashierService.GetCashierById(id);
-            if (cashier == null)
+            try
             {
-                return NotFound(new { message = "Cashier not found" });
+                var cashier = _cashierService.GetCashierById(id);
+                if (cashier == null)
+                {
+                    return NotFound(new { message = "Cashier not found" });
+                }
+                return Ok(cashier);
             }
-            return Ok(cashier);
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
 
         [Authorize(Roles = "manager")]
@@ -45,13 +59,20 @@ namespace BepKhoiBackend.API.Controllers.UserControllers.CashierControllers
         //[Authorize(Roles = "Admin, Manager")]
         public IActionResult CreateCashier([FromBody] CreateCashierDTO newCashier)
         {
-            if (newCashier == null)
+            try
             {
-                return BadRequest("Dữ liệu không hợp lệ.");
-            }
+                if (newCashier == null)
+                {
+                    return BadRequest("Dữ liệu không hợp lệ.");
+                }
 
-            _cashierService.CreateCashier(newCashier.Email, newCashier.Password, newCashier.Phone, newCashier.UserName);
-            return Ok("Cashier đã được tạo thành công.");
+                _cashierService.CreateCashier(newCashier.Email, newCashier.Password, newCashier.Phone, newCashier.UserName);
+                return Ok("Cashier đã được tạo thành công.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
 
 
@@ -100,28 +121,49 @@ namespace BepKhoiBackend.API.Controllers.UserControllers.CashierControllers
         [HttpDelete("{id}")]
         public IActionResult DeleteCashier(int id)
         {
-            _cashierService.DeleteCashier(id);
-            return Ok($"Cashier có ID {id} đã bị xóa.");
+            try
+            {
+                _cashierService.DeleteCashier(id);
+                return Ok($"Cashier có ID {id} đã bị xóa.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
 
         [Authorize(Roles = "manager")]
         [HttpGet("{id}/invoices")]
         public ActionResult<IEnumerable<CashierInvoiceDTO>> GetCashierInvoices(int id)
         {
-            var invoices = _cashierService.GetCashierInvoices(id);
-            if (invoices == null || !invoices.Any())
+            try
             {
-                return NotFound($"Không có hóa đơn nào cho cashier với ID {id}.");
+                var invoices = _cashierService.GetCashierInvoices(id);
+                if (invoices == null || !invoices.Any())
+                {
+                    return NotFound($"Không có hóa đơn nào cho cashier với ID {id}.");
+                }
+                return Ok(new { CashierId = id, Invoices = invoices });
             }
-            return Ok(new { CashierId = id, Invoices = invoices });
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
 
         [Authorize(Roles = "manager")]
         [HttpGet("search")]
         public ActionResult<List<CashierDTO>> GetCashiers([FromQuery] string? searchTerm, [FromQuery] bool? status)
         {
-            var cashiers = _cashierService.GetCashiers(searchTerm, status);
-            return Ok(cashiers);
+            try
+            {
+                var cashiers = _cashierService.GetCashiers(searchTerm, status);
+                return Ok(cashiers);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
 
         [Authorize(Roles = "manager")]
@@ -129,8 +171,15 @@ namespace BepKhoiBackend.API.Controllers.UserControllers.CashierControllers
         [HttpGet("export")]
         public IActionResult ExportCashiersToExcel()
         {
-            var fileContent = _cashierService.ExportCashiersToExcel();
-            return File(fileContent, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Cashiers.xlsx");
+            try
+            {
+                var fileContent = _cashierService.ExportCashiersToExcel();
+                return File(fileContent, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Cashiers.xlsx");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
     }
 }

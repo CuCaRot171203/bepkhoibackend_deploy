@@ -21,28 +21,49 @@ namespace BepKhoiBackend.API.Controllers
         [HttpGet("get-all")]
         public async Task<IActionResult> GetAll([FromQuery] int limit = 10, [FromQuery] int offset = 0)
         {
-            var result = await _roomService.GetAllAsync(limit, offset);
-            return Ok(result);
+            try
+            {
+                var result = await _roomService.GetAllAsync(limit, offset);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var room = await _roomService.GetByIdAsync(id);
-            if (room == null)
-                return NotFound(new { message = "Room not found" });
+            try
+            {
+                var room = await _roomService.GetByIdAsync(id);
+                if (room == null)
+                    return NotFound(new { message = "Room not found" });
 
-            return Ok(room);
+                return Ok(room);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
 
         [Authorize(Roles = "manager")]
         [HttpPost("create")]
         public async Task<IActionResult> Create([FromBody] RoomCreateDto roomCreateDto)
         {
-            if (roomCreateDto == null)
-                return BadRequest(new { message = "Invalid data" });
-            await _roomService.AddAsync(roomCreateDto);
-            return Ok(new { message = "Room created successfully" });
+            try
+            {
+                if (roomCreateDto == null)
+                    return BadRequest(new { message = "Invalid data" });
+                await _roomService.AddAsync(roomCreateDto);
+                return Ok(new { message = "Room created successfully" });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
 
         [Authorize(Roles = "manager")]
@@ -98,29 +119,50 @@ namespace BepKhoiBackend.API.Controllers
         [HttpPut("update/{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] RoomUpdateDto roomUpdateDto)
         {
-            if (roomUpdateDto == null)
-                return BadRequest(new { message = "Invalid data" });
+            try
+            {
+                if (roomUpdateDto == null)
+                    return BadRequest(new { message = "Invalid data" });
 
-            await _roomService.UpdateAsync(id, roomUpdateDto);
-            return Ok(new { message = "Room updated successfully" });
+                await _roomService.UpdateAsync(id, roomUpdateDto);
+                return Ok(new { message = "Room updated successfully" });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
 
         [Authorize(Roles = "manager")]
         [HttpDelete("delete/{id}")]
         public async Task<IActionResult> SoftDelete(int id)
         {
-            var success = await _roomService.SoftDeleteAsync(id);
-            if (!success)
-                return BadRequest(new { message = "Room not found or already deleted" });
+            try
+            {
+                var success = await _roomService.SoftDeleteAsync(id);
+                if (!success)
+                    return BadRequest(new { message = "Room not found or already deleted" });
 
-            return Ok(new { message = "Room deleted successfully" });
+                return Ok(new { message = "Room deleted successfully" });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
 
         [HttpGet("search-by-name")]
         public async Task<IActionResult> SearchByName([FromQuery] string? name, [FromQuery] int limit = 10, [FromQuery] int offset = 0)
         {
-            var result = await _roomService.SearchByNameAsync(name, limit, offset);
-            return Ok(result);
+            try
+            {
+                var result = await _roomService.SearchByNameAsync(name, limit, offset);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred.", details = ex.Message });
+            }
         }
 
         //controller for get Room for POS site
