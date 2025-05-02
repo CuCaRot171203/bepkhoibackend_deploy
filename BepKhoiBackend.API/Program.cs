@@ -15,6 +15,7 @@ using BepKhoiBackend.BusinessObject.Mappings;
 using BepKhoiBackend.BusinessObject.Services.InvoiceService;
 using BepKhoiBackend.BusinessObject.Services;
 using BepKhoiBackend.API.Hubs;
+using PdfSharp.Fonts;
 
 
 Log.Logger = new LoggerConfiguration()
@@ -110,4 +111,8 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+//Config font pdf
+GlobalFontSettings.FontResolver = new CustomFontResolver();
+
 app.Run();

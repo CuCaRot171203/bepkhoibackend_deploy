@@ -4,6 +4,8 @@ using System.Globalization;
 using System.IO;
 using BepKhoiBackend.BusinessObject.dtos.InvoiceDto;
 using QuestPDF.Fluent;
+using PdfSharp.Fonts;
+
 namespace BepKhoiBackend.BusinessObject.Services.InvoiceService
 {
     public class PrintInvoicePdfService
@@ -245,5 +247,28 @@ namespace BepKhoiBackend.BusinessObject.Services.InvoiceService
             //return document.GeneratePdf();
         }
 
+    }
+
+    public class CustomFontResolver : IFontResolver
+    {
+        private readonly string regularPath = "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf";
+        private readonly string boldPath = "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf";
+
+        public string DefaultFontName => "LiberationSans";
+
+        public byte[] GetFont(string faceName)
+        {
+            return faceName switch
+            {
+                "LiberationSans-Bold" => File.ReadAllBytes(boldPath),
+                _ => File.ReadAllBytes(regularPath),
+            };
+        }
+
+        public FontResolverInfo ResolveTypeface(string familyName, bool isBold, bool isItalic)
+        {
+            if (isBold) return new FontResolverInfo("LiberationSans-Bold");
+            return new FontResolverInfo("LiberationSans");
+        }
     }
 }

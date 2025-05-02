@@ -96,7 +96,7 @@
               "RelativeDocumentMoniker": "BepKhoiBackend.BusinessObject\\Services\\InvoiceService\\PrintInvoicePdfService.cs",
               "ToolTip": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.BusinessObject\\Services\\InvoiceService\\PrintInvoicePdfService.cs",
               "RelativeToolTip": "BepKhoiBackend.BusinessObject\\Services\\InvoiceService\\PrintInvoicePdfService.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAgwDoAAABhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-01T22:31:31.248Z",
               "EditorCaption": ""
@@ -135,8 +135,7 @@
               "RelativeToolTip": "BepKhoiBackend.API\\Controllers\\InvoiceControllers\\InvoiceController.cs",
               "ViewState": "AgIAAE0AAAAAAAAAAAAWwFoAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T21:25:34.063Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-01T21:25:34.063Z"
             }
           ]
         }
