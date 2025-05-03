@@ -284,7 +284,7 @@ public class MenuRepository : RepositoryBase, IMenuRepository
         var isDuplicate = await _context.ProductCategories
             .Where(c => c.IsDelete != true)
             .AnyAsync(c =>
-                c.ProductCategoryTitle.Trim().ToLower() == normalizedNewTitle);
+                c.ProductCategoryTitle == normalizedNewTitle);
 
         if (isDuplicate)
             throw new InvalidOperationException($"Danh mục '{productCategoryTitle}' đã tồn tại.");
@@ -292,7 +292,7 @@ public class MenuRepository : RepositoryBase, IMenuRepository
         var newCategory = new ProductCategory
         {
             ProductCategoryId = productCategoryId,
-            ProductCategoryTitle = productCategoryTitle,
+            ProductCategoryTitle = productCategoryTitle.Trim(),
             IsDelete = false
         };
 
@@ -316,12 +316,12 @@ public class MenuRepository : RepositoryBase, IMenuRepository
         var isDuplicate = await _context.ProductCategories
             .Where(c => c.ProductCategoryId != productCategoryId && c.IsDelete != true)
             .AnyAsync(c =>
-                c.ProductCategoryTitle.Trim().ToLower() == normalizedNewTitle);
+                c.ProductCategoryTitle == normalizedNewTitle);
 
         if (isDuplicate)
             throw new InvalidOperationException($"Danh mục '{newTitle}' đã tồn tại.");
 
-        existingCategory.ProductCategoryTitle = newTitle;
+        existingCategory.ProductCategoryTitle = newTitle.Trim();
 
         _context.ProductCategories.Update(existingCategory);
         await _context.SaveChangesAsync();

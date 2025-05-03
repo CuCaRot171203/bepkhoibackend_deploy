@@ -4,11 +4,30 @@ using System.Globalization;
 using System.IO;
 using BepKhoiBackend.BusinessObject.dtos.InvoiceDto;
 using PdfSharp.Fonts;
+using System.Text;
 
 namespace BepKhoiBackend.BusinessObject.Services.InvoiceService
 {
     public class PrintInvoicePdfService
     {
+        public string RemoveDiacritics(string text)
+        {
+            if (string.IsNullOrWhiteSpace(text)) return text;
+
+            text = text.Normalize(NormalizationForm.FormD);
+            StringBuilder sb = new StringBuilder();
+
+            foreach (char c in text)
+            {
+                UnicodeCategory uc = CharUnicodeInfo.GetUnicodeCategory(c);
+                if (uc != UnicodeCategory.NonSpacingMark)
+                {
+                    sb.Append(c);
+                }
+            }
+
+            return sb.ToString().Normalize(NormalizationForm.FormC);
+        }
         public byte[] GenerateInvoicePdf(InvoicePdfDTO invoice)
         {
             try
@@ -27,7 +46,7 @@ namespace BepKhoiBackend.BusinessObject.Services.InvoiceService
                     var gfx = XGraphics.FromPdfPage(page);
                     var defaultFont = new XFont("LiberationSans", 8); // Default font setting  
                     // Store information (Example data)  
-                    string storeName = "Bếp Khói";
+                    string storeName = "Bep Khoi";
                     string storePhone = "0901234567";
                     // Margins   
                     double leftMargin = 5; // 5mm left margin  
@@ -37,8 +56,8 @@ namespace BepKhoiBackend.BusinessObject.Services.InvoiceService
                     // Helper function to draw text with margins  
                     void DrawText(string text, double y, XFont font = null, XBrush brush = null)
                     {
-                        // Use the default font if none specified  
                         font ??= defaultFont;
+                        text = RemoveDiacritics(text ?? "");
 
                         var textWidth = gfx.MeasureString(text, font).Width;
                         var availableWidth = page.Width - XUnit.FromMillimeter(leftMargin + rightMargin);
@@ -72,10 +91,10 @@ namespace BepKhoiBackend.BusinessObject.Services.InvoiceService
                     // Draw Store Information at the top  
                     DrawText(storeName, yPosition, new XFont("LiberationSans", 10, XFontStyleEx.Bold));
                     yPosition += 8;
-                    DrawText($"Điện thoại: {storePhone}", yPosition);
+                    DrawText($"Dien thoai: {storePhone}", yPosition);
                     yPosition += 10;
                     // Header  
-                    DrawText("HÓA ĐƠN BÁN HÀNG", yPosition, new XFont("LiberationSans", 10, XFontStyleEx.Bold));
+                    DrawText("HOA DON BAN HANG", yPosition, new XFont("LiberationSans", 10, XFontStyleEx.Bold));
                     yPosition += 10;
 
                     // Separator below header  
@@ -83,11 +102,11 @@ namespace BepKhoiBackend.BusinessObject.Services.InvoiceService
                     yPosition += 5;
 
                     // Invoice Information  
-                    DrawText($"Mã Hóa Đơn: {invoice.InvoiceId}", yPosition);
+                    DrawText($"Ma Hoa Don: {invoice.InvoiceId}", yPosition);
                     yPosition += 8;
-                    DrawText($"Khách hàng: {invoice.CustomerName}", yPosition);
+                    DrawText($"Khach hang: {invoice.CustomerName}", yPosition);
                     yPosition += 8;
-                    DrawText($"Thời gian: {invoice.CheckInTime:dd/MM/yyyy HH:mm}", yPosition);
+                    DrawText($"Thoi gian: {invoice.CheckInTime:dd/MM/yyyy HH:mm}", yPosition);
                     yPosition += 10;
 
                     // Separator before product section  
@@ -95,13 +114,13 @@ namespace BepKhoiBackend.BusinessObject.Services.InvoiceService
                     yPosition += 5;
 
                     // Product Header  
-                    DrawText("SẢN PHẨM", yPosition, new XFont("LiberationSans", 9, XFontStyleEx.Bold));
+                    DrawText("SAN PHAM", yPosition, new XFont("LiberationSans", 9, XFontStyleEx.Bold));
                     yPosition += 8;
 
                     // Product entries  
                     foreach (var detail in invoice.InvoiceDetails)
                     {
-                        DrawText($"{detail.ProductName} SL: {detail.Quantity} x {detail.Price.ToString("C", new CultureInfo("vi-VN"))}", yPosition);
+                        DrawText($"{detail.ProductName ?? ""} SL: {detail.Quantity} x {detail.Price.ToString("C", new CultureInfo("vi-VN"))}", yPosition);
                         yPosition += 8; // Move down for next product  
                     }
 
@@ -110,11 +129,11 @@ namespace BepKhoiBackend.BusinessObject.Services.InvoiceService
                     yPosition += 5;
 
                     // Summary Section  
-                    DrawText($"Tổng tiền (Chưa VAT): {invoice.Subtotal.ToString("C", new CultureInfo("vi-VN"))}", yPosition);
+                    DrawText($"Tong tien (Chua VAT): {invoice.Subtotal.ToString("C", new CultureInfo("vi-VN"))}", yPosition);
                     yPosition += 8;
-                    DrawText($"Thuế VAT: {invoice.TotalVat.ToString("C", new CultureInfo("vi-VN"))}", yPosition);
+                    DrawText($"Thue VAT: {invoice.TotalVat.ToString("C", new CultureInfo("vi-VN"))}", yPosition);
                     yPosition += 8;
-                    DrawText($"Tổng thanh toán: {invoice.AmountDue.ToString("C", new CultureInfo("vi-VN"))}",
+                    DrawText($"Tong thanh toan: {invoice.AmountDue.ToString("C", new CultureInfo("vi-VN"))}",
                              yPosition, new XFont("LiberationSans", 9, XFontStyleEx.Bold));
 
                     // Save the PDF to memory  
