@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "B:\\DO_AN_GIT\\BepKhoiBackend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3E1A4BAF-DD7F-446E-BAA0-6B67D1F74AA7}|BepKhoiBackend.API\\BepKhoiBackend.API.csproj|b:\\do_an_git\\bepkhoibackend\\bepkhoibackend.api\\controllers\\ordercontrollers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E1A4BAF-DD7F-446E-BAA0-6B67D1F74AA7}|BepKhoiBackend.API\\BepKhoiBackend.API.csproj|solutionrelative:bepkhoibackend.api\\controllers\\ordercontrollers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5D3DAB-FA34-45C0-A607-D499E1415562}|BepKhoiBackend.BusinessObject\\BepKhoiBackend.BusinessObject.csproj|b:\\do_an_git\\bepkhoibackend\\bepkhoibackend.businessobject\\services\\orderservice\\printorderpdfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5D3DAB-FA34-45C0-A607-D499E1415562}|BepKhoiBackend.BusinessObject\\BepKhoiBackend.BusinessObject.csproj|solutionrelative:bepkhoibackend.businessobject\\services\\orderservice\\printorderpdfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9146B6A7-32BD-42E3-A573-7DE5A023D2E2}|BepKhoiBackend.DataAccess\\BepKhoiBackend.DataAccess.csproj|b:\\do_an_git\\bepkhoibackend\\bepkhoibackend.dataaccess\\repository\\orderrepository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9146B6A7-32BD-42E3-A573-7DE5A023D2E2}|BepKhoiBackend.DataAccess\\BepKhoiBackend.DataAccess.csproj|solutionrelative:bepkhoibackend.dataaccess\\repository\\orderrepository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5D3DAB-FA34-45C0-A607-D499E1415562}|BepKhoiBackend.BusinessObject\\BepKhoiBackend.BusinessObject.csproj|b:\\do_an_git\\bepkhoibackend\\bepkhoibackend.businessobject\\services\\invoiceservice\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5D3DAB-FA34-45C0-A607-D499E1415562}|BepKhoiBackend.BusinessObject\\BepKhoiBackend.BusinessObject.csproj|solutionrelative:bepkhoibackend.businessobject\\services\\invoiceservice\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5D3DAB-FA34-45C0-A607-D499E1415562}|BepKhoiBackend.BusinessObject\\BepKhoiBackend.BusinessObject.csproj|b:\\do_an_git\\bepkhoibackend\\bepkhoibackend.businessobject\\services\\invoiceservice\\iinvoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5D3DAB-FA34-45C0-A607-D499E1415562}|BepKhoiBackend.BusinessObject\\BepKhoiBackend.BusinessObject.csproj|solutionrelative:bepkhoibackend.businessobject\\services\\invoiceservice\\iinvoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3E5D3DAB-FA34-45C0-A607-D499E1415562}|BepKhoiBackend.BusinessObject\\BepKhoiBackend.BusinessObject.csproj|b:\\do_an_git\\bepkhoibackend\\bepkhoibackend.businessobject\\services\\invoiceservice\\printinvoicepdfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3E5D3DAB-FA34-45C0-A607-D499E1415562}|BepKhoiBackend.BusinessObject\\BepKhoiBackend.BusinessObject.csproj|solutionrelative:bepkhoibackend.businessobject\\services\\invoiceservice\\printinvoicepdfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5D3DAB-FA34-45C0-A607-D499E1415562}|BepKhoiBackend.BusinessObject\\BepKhoiBackend.BusinessObject.csproj|b:\\do_an_git\\bepkhoibackend\\bepkhoibackend.businessobject\\dtos\\invoicedto\\invoicepdfdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5D3DAB-FA34-45C0-A607-D499E1415562}|BepKhoiBackend.BusinessObject\\BepKhoiBackend.BusinessObject.csproj|solutionrelative:bepkhoibackend.businessobject\\dtos\\invoicedto\\invoicepdfdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3E1A4BAF-DD7F-446E-BAA0-6B67D1F74AA7}|BepKhoiBackend.API\\BepKhoiBackend.API.csproj|b:\\do_an_git\\bepkhoibackend\\bepkhoibackend.api\\controllers\\menucontrollers\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,14 +63,79 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PrintInvoicePdfService.cs",
-              "DocumentMoniker": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.BusinessObject\\Services\\InvoiceService\\PrintInvoicePdfService.cs",
-              "RelativeDocumentMoniker": "BepKhoiBackend.BusinessObject\\Services\\InvoiceService\\PrintInvoicePdfService.cs",
-              "ToolTip": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.BusinessObject\\Services\\InvoiceService\\PrintInvoicePdfService.cs",
-              "RelativeToolTip": "BepKhoiBackend.BusinessObject\\Services\\InvoiceService\\PrintInvoicePdfService.cs",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAiwLMAAAAAAAAAAAAAAA==",
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.API\\Controllers\\OrderControllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "BepKhoiBackend.API\\Controllers\\OrderControllers\\OrderController.cs",
+              "ToolTip": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.API\\Controllers\\OrderControllers\\OrderController.cs",
+              "RelativeToolTip": "BepKhoiBackend.API\\Controllers\\OrderControllers\\OrderController.cs",
+              "ViewState": "AgIAAGQBAAAAAAAAAAAawH8BAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T12:48:55.23Z",
+              "WhenOpened": "2025-05-03T20:40:01.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PrintOrderPdfService.cs",
+              "DocumentMoniker": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.BusinessObject\\Services\\OrderService\\PrintOrderPdfService.cs",
+              "RelativeDocumentMoniker": "BepKhoiBackend.BusinessObject\\Services\\OrderService\\PrintOrderPdfService.cs",
+              "ToolTip": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.BusinessObject\\Services\\OrderService\\PrintOrderPdfService.cs",
+              "RelativeToolTip": "BepKhoiBackend.BusinessObject\\Services\\OrderService\\PrintOrderPdfService.cs",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAAALcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T20:39:34.543Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.DataAccess\\Repository\\OrderRepository\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "BepKhoiBackend.DataAccess\\Repository\\OrderRepository\\OrderRepository.cs",
+              "ToolTip": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.DataAccess\\Repository\\OrderRepository\\OrderRepository.cs",
+              "RelativeToolTip": "BepKhoiBackend.DataAccess\\Repository\\OrderRepository\\OrderRepository.cs",
+              "ViewState": "AgIAAFUBAAAAAAAAAAAqwGwBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T20:38:54.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "InvoiceService.cs",
+              "DocumentMoniker": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.BusinessObject\\Services\\InvoiceService\\InvoiceService.cs",
+              "RelativeDocumentMoniker": "BepKhoiBackend.BusinessObject\\Services\\InvoiceService\\InvoiceService.cs",
+              "ToolTip": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.BusinessObject\\Services\\InvoiceService\\InvoiceService.cs",
+              "RelativeToolTip": "BepKhoiBackend.BusinessObject\\Services\\InvoiceService\\InvoiceService.cs",
+              "ViewState": "AgIAAPEAAAAAAAAAAAAiwCUBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T20:14:17.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IInvoiceService.cs",
+              "DocumentMoniker": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.BusinessObject\\Services\\InvoiceService\\IInvoiceService.cs",
+              "RelativeDocumentMoniker": "BepKhoiBackend.BusinessObject\\Services\\InvoiceService\\IInvoiceService.cs",
+              "ToolTip": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.BusinessObject\\Services\\InvoiceService\\IInvoiceService.cs",
+              "RelativeToolTip": "BepKhoiBackend.BusinessObject\\Services\\InvoiceService\\IInvoiceService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T20:13:41.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "InvoicePdfDTO.cs",
+              "DocumentMoniker": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.BusinessObject\\dtos\\InvoiceDto\\InvoicePdfDTO.cs",
+              "RelativeDocumentMoniker": "BepKhoiBackend.BusinessObject\\dtos\\InvoiceDto\\InvoicePdfDTO.cs",
+              "ToolTip": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.BusinessObject\\dtos\\InvoiceDto\\InvoicePdfDTO.cs",
+              "RelativeToolTip": "BepKhoiBackend.BusinessObject\\dtos\\InvoiceDto\\InvoicePdfDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T20:13:12.219Z",
               "EditorCaption": ""
             },
             {
@@ -64,6 +153,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "PrintInvoicePdfService.cs",
+              "DocumentMoniker": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.BusinessObject\\Services\\InvoiceService\\PrintInvoicePdfService.cs",
+              "RelativeDocumentMoniker": "BepKhoiBackend.BusinessObject\\Services\\InvoiceService\\PrintInvoicePdfService.cs",
+              "ToolTip": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.BusinessObject\\Services\\InvoiceService\\PrintInvoicePdfService.cs",
+              "RelativeToolTip": "BepKhoiBackend.BusinessObject\\Services\\InvoiceService\\PrintInvoicePdfService.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwB4AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T12:48:55.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "MenuRepository.cs",
               "DocumentMoniker": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.DataAccess\\Repository\\MenuRepository\\MenuRepository.cs",
               "RelativeDocumentMoniker": "BepKhoiBackend.DataAccess\\Repository\\MenuRepository\\MenuRepository.cs",
@@ -75,7 +177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "IMenuRepository.cs",
               "DocumentMoniker": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.DataAccess\\Abstract\\MenuAbstract\\IMenuRepository.cs",
               "RelativeDocumentMoniker": "BepKhoiBackend.DataAccess\\Abstract\\MenuAbstract\\IMenuRepository.cs",
@@ -87,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "MenuService.cs",
               "DocumentMoniker": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.BusinessObject\\Services\\MenuService\\MenuService.cs",
               "RelativeDocumentMoniker": "BepKhoiBackend.BusinessObject\\Services\\MenuService\\MenuService.cs",
@@ -99,7 +201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "IMenuService.cs",
               "DocumentMoniker": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.BusinessObject\\Abstract\\MenuBusinessAbstract\\IMenuService.cs",
               "RelativeDocumentMoniker": "BepKhoiBackend.BusinessObject\\Abstract\\MenuBusinessAbstract\\IMenuService.cs",
@@ -111,7 +213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "MenuController.cs",
               "DocumentMoniker": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.API\\Controllers\\MenuControllers\\MenuController.cs",
               "RelativeDocumentMoniker": "BepKhoiBackend.API\\Controllers\\MenuControllers\\MenuController.cs",
@@ -119,8 +221,7 @@
               "RelativeToolTip": "BepKhoiBackend.API\\Controllers\\MenuControllers\\MenuController.cs",
               "ViewState": "AgIAAOsBAAAAAAAAAAAAAAMCAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T06:24:29.042Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T06:24:29.042Z"
             }
           ]
         }

@@ -22,6 +22,8 @@ namespace BepKhoiBackend.DataAccess.Repository.OrderRepository
         {
             try
             {
+                TimeZoneInfo vietnamTimeZone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time");
+                order.CreatedTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, vietnamTimeZone);
                 _context.Orders.Add(order);
                 await _context.SaveChangesAsync();
                 return order;
