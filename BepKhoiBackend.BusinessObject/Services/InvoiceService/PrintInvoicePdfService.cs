@@ -119,7 +119,7 @@ namespace BepKhoiBackend.BusinessObject.Services.InvoiceService
                     // Product entries  
                     foreach (var detail in invoice.InvoiceDetails)
                     {
-                        DrawText($"{detail.ProductName ?? ""} SL: {detail.Quantity} x {detail.Price.ToString("C", new CultureInfo("vi-VN"))}", yPosition, removeDiacritics: false);
+                        DrawText($"{detail.ProductName ?? ""} SL: {detail.Quantity} x {detail.Price.ToString("N0", new CultureInfo("vi-VN")) + " VND"}", yPosition, removeDiacritics: false);
                         yPosition += 8;
                     }
 
@@ -128,11 +128,11 @@ namespace BepKhoiBackend.BusinessObject.Services.InvoiceService
                     yPosition += 5;
 
                     // Summary Section  
-                    DrawText($"Tong tien (Chua VAT): {invoice.Subtotal.ToString("C", new CultureInfo("vi-VN"))}", yPosition, removeDiacritics: false);
+                    DrawText($"Tong tien (Chua VAT): {invoice.Subtotal.ToString("N0", new CultureInfo("vi-VN")) + " VND"}", yPosition, removeDiacritics: false);
                     yPosition += 8;
-                    DrawText($"Thue VAT: {invoice.TotalVat.ToString("C", new CultureInfo("vi-VN"))}", yPosition, removeDiacritics: false);
+                    DrawText($"Thue VAT: {invoice.TotalVat.ToString("N0", new CultureInfo("vi-VN")) + " VND"}", yPosition, removeDiacritics: false);
                     yPosition += 8;
-                    DrawText($"Tong thanh toan: {invoice.AmountDue.ToString("C", new CultureInfo("vi-VN"))}",
+                    DrawText($"Tong thanh toan: {invoice.AmountDue.ToString("N0", new CultureInfo("vi-VN")) + " VND"}",
                              yPosition, new XFont("LiberationSans", 9, XFontStyleEx.Bold), removeDiacritics: false);
 
                     // Save the PDF to memory  
@@ -145,7 +145,6 @@ namespace BepKhoiBackend.BusinessObject.Services.InvoiceService
                 throw new InvalidOperationException("Lỗi khi tạo PDF: " + ex.Message, ex);
             }
         }
-
     }
 
     public class CustomFontResolver : IFontResolver
