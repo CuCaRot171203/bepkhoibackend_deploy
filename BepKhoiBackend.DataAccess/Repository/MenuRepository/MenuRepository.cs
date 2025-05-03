@@ -279,7 +279,7 @@ public class MenuRepository : RepositoryBase, IMenuRepository
         if (string.IsNullOrWhiteSpace(productCategoryTitle))
             throw new ArgumentException("Tên danh mục không được để trống.");
 
-        var normalizedNewTitle = StringHelper.RemoveDiacritics(productCategoryTitle.Trim().ToLower());
+        var normalizedNewTitle = productCategoryTitle.Trim().ToLower();
 
         var isDuplicate = await _context.ProductCategories
             .Where(c => c.IsDelete != true)
@@ -311,7 +311,7 @@ public class MenuRepository : RepositoryBase, IMenuRepository
         if (existingCategory == null)
             throw new KeyNotFoundException($"Không tìm thấy danh mục với ID = {productCategoryId}.");
 
-        var normalizedNewTitle = StringHelper.RemoveDiacritics(newTitle.Trim().ToLower());
+        var normalizedNewTitle = newTitle.Trim().ToLower();
 
         var isDuplicate = await _context.ProductCategories
             .Where(c => c.ProductCategoryId != productCategoryId && c.IsDelete != true)

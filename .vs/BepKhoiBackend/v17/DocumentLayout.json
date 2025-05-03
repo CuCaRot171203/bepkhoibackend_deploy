@@ -76,7 +76,7 @@
               "RelativeDocumentMoniker": "BepKhoiBackend.DataAccess\\Repository\\MenuRepository\\MenuRepository.cs",
               "ToolTip": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.DataAccess\\Repository\\MenuRepository\\MenuRepository.cs",
               "RelativeToolTip": "BepKhoiBackend.DataAccess\\Repository\\MenuRepository\\MenuRepository.cs",
-              "ViewState": "AgIAACUBAAAAAAAAAAAQwD4BAABNAAAAAAAAAA==",
+              "ViewState": "AgIAACsBAAAAAAAAAAAQwEIBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-03T09:21:24.967Z",
               "EditorCaption": ""
@@ -91,8 +91,7 @@
               "RelativeToolTip": "BepKhoiBackend.API\\appsettings.json",
               "ViewState": "AgIAABUAAAAAAAAAAAAAAC8AAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-03T08:14:34.094Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T08:14:34.094Z"
             },
             {
               "$type": "Document",
