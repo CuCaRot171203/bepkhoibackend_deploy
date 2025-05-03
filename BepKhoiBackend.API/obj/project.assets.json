@@ -8113,19 +8113,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\phams\\.nuget\\packages\\": {}
+    "C:\\Users\\TungNT\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\phams\\Desktop\\backend_deploy_code\\bepkhoibackend_deploy\\BepKhoiBackend.API\\BepKhoiBackend.API.csproj",
+      "projectUniqueName": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.API\\BepKhoiBackend.API.csproj",
       "projectName": "BepKhoiBackend.API",
-      "projectPath": "C:\\Users\\phams\\Desktop\\backend_deploy_code\\bepkhoibackend_deploy\\BepKhoiBackend.API\\BepKhoiBackend.API.csproj",
-      "packagesPath": "C:\\Users\\phams\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\phams\\Desktop\\backend_deploy_code\\bepkhoibackend_deploy\\BepKhoiBackend.API\\obj\\",
+      "projectPath": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.API\\BepKhoiBackend.API.csproj",
+      "packagesPath": "C:\\Users\\TungNT\\.nuget\\packages\\",
+      "outputPath": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.API\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\phams\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\TungNT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8133,20 +8138,21 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\phams\\Desktop\\backend_deploy_code\\bepkhoibackend_deploy\\BepKhoiBackend.BusinessObject\\BepKhoiBackend.BusinessObject.csproj": {
-              "projectPath": "C:\\Users\\phams\\Desktop\\backend_deploy_code\\bepkhoibackend_deploy\\BepKhoiBackend.BusinessObject\\BepKhoiBackend.BusinessObject.csproj"
+            "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.BusinessObject\\BepKhoiBackend.BusinessObject.csproj": {
+              "projectPath": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.BusinessObject\\BepKhoiBackend.BusinessObject.csproj"
             },
-            "C:\\Users\\phams\\Desktop\\backend_deploy_code\\bepkhoibackend_deploy\\BepKhoiBackend.DataAccess\\BepKhoiBackend.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\phams\\Desktop\\backend_deploy_code\\bepkhoibackend_deploy\\BepKhoiBackend.DataAccess\\BepKhoiBackend.DataAccess.csproj"
+            "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.DataAccess\\BepKhoiBackend.DataAccess.csproj": {
+              "projectPath": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.DataAccess\\BepKhoiBackend.DataAccess.csproj"
             },
-            "C:\\Users\\phams\\Desktop\\backend_deploy_code\\bepkhoibackend_deploy\\BepKhoiBackend.Test\\BepKhoiBackend.Test.csproj": {
-              "projectPath": "C:\\Users\\phams\\Desktop\\backend_deploy_code\\bepkhoibackend_deploy\\BepKhoiBackend.Test\\BepKhoiBackend.Test.csproj"
+            "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.Test\\BepKhoiBackend.Test.csproj": {
+              "projectPath": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.Test\\BepKhoiBackend.Test.csproj"
             }
           }
         }
@@ -8210,7 +8216,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

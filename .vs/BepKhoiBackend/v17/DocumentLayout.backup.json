@@ -112,7 +112,7 @@
               "RelativeDocumentMoniker": "BepKhoiBackend.BusinessObject\\Services\\InvoiceService\\PrintInvoicePdfService.cs",
               "ToolTip": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.BusinessObject\\Services\\InvoiceService\\PrintInvoicePdfService.cs",
               "RelativeToolTip": "BepKhoiBackend.BusinessObject\\Services\\InvoiceService\\PrintInvoicePdfService.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAowHcAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAPUAAAAAAAAAAAAowBIBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-01T22:31:31.248Z",
               "EditorCaption": ""
@@ -127,8 +127,7 @@
               "RelativeToolTip": "BepKhoiBackend.DataAccess\\Repository\\InvoiceRepository\\InvoiceRepository.cs",
               "ViewState": "AgIAAGIAAAAAAAAAAAAwwGsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T21:26:49.086Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-01T21:26:49.086Z"
             },
             {
               "$type": "Document",

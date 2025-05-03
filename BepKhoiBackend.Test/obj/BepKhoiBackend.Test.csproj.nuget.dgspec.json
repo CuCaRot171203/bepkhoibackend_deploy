@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\phams\\Desktop\\backend_deploy_code\\bepkhoibackend_deploy\\BepKhoiBackend.Test\\BepKhoiBackend.Test.csproj": {}
+    "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.Test\\BepKhoiBackend.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\phams\\Desktop\\backend_deploy_code\\bepkhoibackend_deploy\\BepKhoiBackend.Test\\BepKhoiBackend.Test.csproj": {
+    "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.Test\\BepKhoiBackend.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\phams\\Desktop\\backend_deploy_code\\bepkhoibackend_deploy\\BepKhoiBackend.Test\\BepKhoiBackend.Test.csproj",
+        "projectUniqueName": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.Test\\BepKhoiBackend.Test.csproj",
         "projectName": "BepKhoiBackend.Test",
-        "projectPath": "C:\\Users\\phams\\Desktop\\backend_deploy_code\\bepkhoibackend_deploy\\BepKhoiBackend.Test\\BepKhoiBackend.Test.csproj",
-        "packagesPath": "C:\\Users\\phams\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\phams\\Desktop\\backend_deploy_code\\bepkhoibackend_deploy\\BepKhoiBackend.Test\\obj\\",
+        "projectPath": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.Test\\BepKhoiBackend.Test.csproj",
+        "packagesPath": "C:\\Users\\TungNT\\.nuget\\packages\\",
+        "outputPath": "B:\\DO_AN_GIT\\BepKhoiBackend\\BepKhoiBackend.Test\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\phams\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\TungNT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -60,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

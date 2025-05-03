@@ -507,7 +507,7 @@ namespace BepKhoiBackend.API.Controllers.MenuControllers
 
 
         //Create, update, delete product category function
-        [HttpPost]
+        [HttpPost("product-category")]
         public async Task<IActionResult> AddProductCategory([FromQuery] int id, [FromQuery] string title)
         {
             try
@@ -529,7 +529,7 @@ namespace BepKhoiBackend.API.Controllers.MenuControllers
             }
         }
 
-        [HttpPut]
+        [HttpPut("product-category")]
         public async Task<IActionResult> UpdateProductCategory([FromQuery] int id, [FromQuery] string title)
         {
             try
@@ -555,7 +555,7 @@ namespace BepKhoiBackend.API.Controllers.MenuControllers
             }
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("product-category/{id}")]
         public async Task<IActionResult> DeleteProductCategory(int id)
         {
             try

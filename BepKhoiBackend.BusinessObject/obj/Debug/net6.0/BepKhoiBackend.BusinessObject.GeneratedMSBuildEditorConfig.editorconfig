@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BepKhoiBackend.BusinessObject
-build_property.ProjectDir = C:\Users\phams\Desktop\backend_deploy_code\bepkhoibackend_deploy\BepKhoiBackend.BusinessObject\
+build_property.ProjectDir = B:\DO_AN_GIT\BepKhoiBackend\BepKhoiBackend.BusinessObject\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
