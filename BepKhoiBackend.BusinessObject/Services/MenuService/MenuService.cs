@@ -57,32 +57,20 @@ namespace BepKhoiBackend.BusinessObject.Services.MenuService
                 if (isActive.HasValue)
                     query = query.Where(m => m.Status == isActive.Value);
 
-                // Filter theo productId, filter on DB
-                if (!string.IsNullOrEmpty(productNameOrId))
-                {
-                    var searchValue = productNameOrId.Trim().ToLower();
-
-                    if (ProductValidator.IsPositiveInteger(searchValue))
-                    {
-                        int id = int.Parse(searchValue);
-                        ProductValidator.ValidatePositiveProductId(id);
-                        query = query.Where(m => m.ProductId == id);
-                    }
-                }
-
                 // Sorting
                 query = MenuHelper.ApplySorting(query, sortBy, sortDirection);
 
-                // Get all
+                // Get all data from DB
                 var data = await query.ToListAsync();
 
-                // If input name, process remove accents
-                if (!string.IsNullOrEmpty(productNameOrId) && !ProductValidator.IsPositiveInteger(productNameOrId.Trim()))
+                // Filter by ProductId or ProductName after DB query
+                if (!string.IsNullOrEmpty(productNameOrId))
                 {
                     var searchValue = productNameOrId.Trim().ToLower();
                     var searchNoSign = DataAccess.Helpers.StringHelper.RemoveDiacritics(searchValue);
 
                     data = data.Where(m =>
+                        m.ProductId.ToString() == searchValue ||
                         DataAccess.Helpers.StringHelper.RemoveDiacritics(m.ProductName.ToLower()).Contains(searchNoSign)
                     ).ToList();
                 }
@@ -102,9 +90,9 @@ namespace BepKhoiBackend.BusinessObject.Services.MenuService
 
         //get menu for customer
         public async Task<ResultWithList<MenuCustomerDto>> GetAllMenusCustomerAsync(
-        string sortBy, string sortDirection,
-        int? categoryId, bool? isActive, string? productNameOrId)
-            {
+    string sortBy, string sortDirection,
+    int? categoryId, bool? isActive, string? productNameOrId)
+        {
             try
             {
                 var allowedSortFields = new List<string> { "ProductId", "ProductName", "SellPrice", "CostPrice" };
@@ -114,49 +102,32 @@ namespace BepKhoiBackend.BusinessObject.Services.MenuService
                 }
 
                 var query = _menuRepository.GetMenusQueryable();
-                query = query.Where(m => m.Status==true && m.IsAvailable==true);
+                query = query.Where(m => m.Status == true && m.IsAvailable == true);
+
                 if (categoryId.HasValue)
                     query = query.Where(m => m.ProductCategoryId == categoryId.Value);
 
                 if (isActive.HasValue)
                     query = query.Where(m => m.Status == isActive.Value);
 
-                // Filter theo productId, filter on DB
-                if (!string.IsNullOrEmpty(productNameOrId))
-                {
-                    var searchValue = productNameOrId.Trim().ToLower();
-
-                    if (ProductValidator.IsPositiveInteger(searchValue))
-                    {
-                        int id = int.Parse(searchValue);
-                        ProductValidator.ValidatePositiveProductId(id);
-                        query = query.Where(m => m.ProductId == id);
-                    }
-                }
-
                 query = MenuHelper.ApplySorting(query, sortBy, sortDirection);
 
-                var data = await query.ToListAsync();
+                var data = await query
+                    .Include(m => m.ProductImages)
+                    .ToListAsync();
 
-                if (!string.IsNullOrEmpty(productNameOrId) && !ProductValidator.IsPositiveInteger(productNameOrId.Trim()))
-                {
-                    var searchValue = productNameOrId.Trim().ToLower();
-                    query = query.Where(m => m.ProductName.ToLower().Contains(searchValue));
-                }
-
-                var dataMenuImage = await query.Include(m => m.ProductImages).ToListAsync();
-
-                if (!string.IsNullOrEmpty(productNameOrId) && !ProductValidator.IsPositiveInteger(productNameOrId.Trim()))
+                if (!string.IsNullOrEmpty(productNameOrId))
                 {
                     var searchValue = productNameOrId.Trim().ToLower();
                     var searchNoSign = DataAccess.Helpers.StringHelper.RemoveDiacritics(searchValue);
 
                     data = data.Where(m =>
+                        m.ProductId.ToString() == searchValue ||
                         DataAccess.Helpers.StringHelper.RemoveDiacritics(m.ProductName.ToLower()).Contains(searchNoSign)
                     ).ToList();
                 }
 
-                var mappedData = dataMenuImage.Select(m => new MenuCustomerDto
+                var mappedData = data.Select(m => new MenuCustomerDto
                 {
                     ProductId = m.ProductId,
                     ProductName = m.ProductName,
@@ -175,7 +146,6 @@ namespace BepKhoiBackend.BusinessObject.Services.MenuService
                         ImageUrl = img.ProductImage1
                     }).ToList()
                 }).ToList();
-
 
                 return new ResultWithList<MenuCustomerDto>
                 {

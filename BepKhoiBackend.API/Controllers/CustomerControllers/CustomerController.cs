@@ -1,8 +1,10 @@
-﻿using BepKhoiBackend.BusinessObject.dtos.CustomerDto;
+﻿using BepKhoiBackend.API.Hubs;
+using BepKhoiBackend.BusinessObject.dtos.CustomerDto;
 using BepKhoiBackend.BusinessObject.Services.CustomerService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using System.ComponentModel.DataAnnotations;
 
 namespace BepKhoiBackend.API.Controllers.CustomerControllers
@@ -12,9 +14,10 @@ namespace BepKhoiBackend.API.Controllers.CustomerControllers
     public class CustomerController : ControllerBase
     {
         private readonly ICustomerService _customerService;
-
-        public CustomerController(ICustomerService customerService)
+        private readonly IHubContext<SignalrHub> _hubContext;
+        public CustomerController(ICustomerService customerService, IHubContext<SignalrHub> hubContext)
         {
+            _hubContext = hubContext;
             _customerService = customerService;
         }
 
@@ -143,6 +146,7 @@ namespace BepKhoiBackend.API.Controllers.CustomerControllers
                 }
 
                 var result = await _customerService.CreateNewCustomerAsync(request);
+                await _hubContext.Clients.Group("customer").SendAsync("NewCustomerAdded");
                 return Ok(new { message = "Customer created successfully", data = result });
             }
             catch (ArgumentException ex)

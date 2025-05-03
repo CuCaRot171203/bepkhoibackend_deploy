@@ -152,6 +152,8 @@ namespace BepKhoiBackend.DataAccess.Repositories
 
             try
             {
+                TimeZoneInfo vietnamTimeZone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time");
+                invoice.CheckOutTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, vietnamTimeZone);
                 await _context.Invoices.AddAsync(invoice);
                 await _context.SaveChangesAsync();
                 return invoice;
