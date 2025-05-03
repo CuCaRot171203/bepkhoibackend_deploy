@@ -208,7 +208,7 @@ namespace BepKhoiBackend.API.Controllers.InvoiceControllers
                     invoiceId = response.InvoiceId,
                     status = false
                 });
-                var redirectFail = $"http://localhost:3000/vnpay-result?result=false";
+                var redirectFail = $"http://www.nhahangbepkhoi.shop/vnpay-result?result=false";
                 return Redirect(redirectFail);
             }
             catch (Exception)
