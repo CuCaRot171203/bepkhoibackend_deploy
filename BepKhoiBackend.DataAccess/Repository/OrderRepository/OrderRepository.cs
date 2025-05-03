@@ -360,6 +360,7 @@ namespace BepKhoiBackend.DataAccess.Repository.OrderRepository
         {
             return await _context.Orders
                 .Include(o => o.OrderDetails)
+                .Include(o => o.DeliveryInformation)
                 .FirstOrDefaultAsync(o => o.OrderId == orderId);
         }
 

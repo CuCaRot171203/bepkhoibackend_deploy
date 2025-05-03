@@ -119,7 +119,7 @@ namespace BepKhoiBackend.BusinessObject.Services.InvoiceService
                     // Product entries  
                     foreach (var detail in invoice.InvoiceDetails)
                     {
-                        DrawText($"{detail.ProductName ?? ""} SL: {detail.Quantity} x {detail.Price.ToString("N0", new CultureInfo("vi-VN")) + " VND"}", yPosition, removeDiacritics: false);
+                        DrawText($"{detail.ProductName ?? ""} SL: {detail.Quantity} x {detail.Price.ToString("N0", new CultureInfo("vi-VN")) + " VND"}", yPosition, removeDiacritics: true);
                         yPosition += 8;
                     }
 
@@ -131,6 +131,10 @@ namespace BepKhoiBackend.BusinessObject.Services.InvoiceService
                     DrawText($"Tong tien (Chua VAT): {invoice.Subtotal.ToString("N0", new CultureInfo("vi-VN")) + " VND"}", yPosition, removeDiacritics: false);
                     yPosition += 8;
                     DrawText($"Thue VAT: {invoice.TotalVat.ToString("N0", new CultureInfo("vi-VN")) + " VND"}", yPosition, removeDiacritics: false);
+                    yPosition += 8;
+                    DrawText($"Chi phi khac: {invoice.OtherPayment.ToString("N0", new CultureInfo("vi-VN")) + " VND"}", yPosition, removeDiacritics: false);
+                    yPosition += 8;
+                    DrawText($"Giam gia: {invoice.InvoiceDiscount.ToString("N0", new CultureInfo("vi-VN")) + " VND"}", yPosition, removeDiacritics: false);
                     yPosition += 8;
                     DrawText($"Tong thanh toan: {invoice.AmountDue.ToString("N0", new CultureInfo("vi-VN")) + " VND"}",
                              yPosition, new XFont("LiberationSans", 9, XFontStyleEx.Bold), removeDiacritics: false);

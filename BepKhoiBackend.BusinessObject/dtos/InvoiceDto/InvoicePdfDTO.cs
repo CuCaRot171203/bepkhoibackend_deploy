@@ -1,5 +1,6 @@
 ﻿using BepKhoiBackend.BusinessObject.dtos.InvoiceDto;
-namespace BepKhoiBackend.BusinessObject.dtos.InvoiceDto {
+namespace BepKhoiBackend.BusinessObject.dtos.InvoiceDto
+{
 
     public class InvoicePdfDTO
     {
@@ -10,6 +11,8 @@ namespace BepKhoiBackend.BusinessObject.dtos.InvoiceDto {
         public int TotalQuantity { get; set; }
         public decimal Subtotal { get; set; } // Giá ban đầu
         public decimal TotalVat { get; set; } // VAT
+        public decimal OtherPayment { get; set; }
+        public decimal InvoiceDiscount { get; set; }
         public decimal AmountDue { get; set; } // Tổng tiền
         public List<InvoiceDetailPdfDTO> InvoiceDetails { get; set; } = new List<InvoiceDetailPdfDTO>();
     }

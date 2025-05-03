@@ -14,7 +14,7 @@ namespace BepKhoiBackend.BusinessObject.Services.InvoiceService
         Task<List<InvoiceDTO>> GetAllInvoicesAsync();
         Task<List<InvoiceDTO>> FilterInvoiceManagerServiceAsync(FilterInvoiceManager dto);
         //------------------NgocQuan----------------------//
-        InvoicePdfDTO GetInvoiceForPdf(int id);
+        InvoicePdfDTO? GetInvoiceForPdf(int id);
         Task<InvoiceForVnpayProcessDto?> GetInvoiceByIdForVnpayAsync(int invoiceId);
         Task<bool> UpdateInvoiceStatus(int invoiceId, bool status);
         Task<(int invoiceId, int? roomId, bool? isUse)> CreateInvoiceForPaymentServiceAsync(

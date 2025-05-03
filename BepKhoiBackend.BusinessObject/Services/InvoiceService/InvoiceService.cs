@@ -25,7 +25,7 @@ namespace BepKhoiBackend.BusinessObject.Services.InvoiceService
         {
             try
             {
-                var invoices = await _invoiceRepository.GetAllInvoices(); 
+                var invoices = await _invoiceRepository.GetAllInvoices();
 
                 return invoices.Select(i => new InvoiceDTO
                 {
@@ -110,7 +110,7 @@ namespace BepKhoiBackend.BusinessObject.Services.InvoiceService
         }
 
         //------------------NgocQuan----------------------//
-        public InvoicePdfDTO GetInvoiceForPdf(int id)
+        public InvoicePdfDTO? GetInvoiceForPdf(int id)
         {
             var invoice = _invoiceRepository.GetInvoiceForPdf(id);
             if (invoice == null) return null;
@@ -125,6 +125,8 @@ namespace BepKhoiBackend.BusinessObject.Services.InvoiceService
                 Subtotal = invoice.Subtotal,
                 TotalVat = invoice.TotalVat ?? 0,
                 AmountDue = invoice.AmountDue,
+                OtherPayment = invoice.OtherPayment ?? 0,
+                InvoiceDiscount = invoice.InvoiceDiscount ?? 0,
                 InvoiceDetails = invoice.InvoiceDetails?.Select(d => new InvoiceDetailPdfDTO
                 {
                     ProductName = d.Product?.ProductName ?? "Không xác định",
@@ -169,7 +171,7 @@ namespace BepKhoiBackend.BusinessObject.Services.InvoiceService
             }
             catch (Exception)
             {
-                throw; 
+                throw;
             }
         }
 
@@ -192,11 +194,11 @@ namespace BepKhoiBackend.BusinessObject.Services.InvoiceService
         //Pham Son Tung
         public async Task<(Invoice invoice, (int? roomId, bool? isUse)? roomUpdateResult)> HandleInvoiceVnpayCompletionAsync(int invoiceId)
         {
-            var invoice = await _invoiceRepository.GetInvoiceByIdAsync(invoiceId); 
+            var invoice = await _invoiceRepository.GetInvoiceByIdAsync(invoiceId);
             if (invoice == null)
                 throw new ArgumentException("Invoice not found with ID: " + invoiceId);
 
-            await _invoiceRepository.ChangeOrderStatusAfterPayment(invoice.OrderId); 
+            await _invoiceRepository.ChangeOrderStatusAfterPayment(invoice.OrderId);
 
             (int? roomId, bool? isUse)? roomUpdateResult = null;
 
@@ -290,8 +292,5 @@ namespace BepKhoiBackend.BusinessObject.Services.InvoiceService
                 throw;
             }
         }
-
-
-
     }
 }
