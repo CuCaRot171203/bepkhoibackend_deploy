@@ -187,7 +187,7 @@ namespace BepKhoiBackend.API.Controllers.InvoiceControllers
                             });
                         }
                         // Redirect đến frontend (ví dụ: trang thanh toán thành công)
-                        var redirectUrl = $"http://localhost:3000/vnpay-result?result=true";
+                        var redirectUrl = $"http://www.nhahangbepkhoi.shop/vnpay-result?result=true";
                         return Redirect(redirectUrl);
                     }
                     else
@@ -197,7 +197,7 @@ namespace BepKhoiBackend.API.Controllers.InvoiceControllers
                             invoiceId = response.InvoiceId,
                             status = false
                         });
-                        var failUrl = $"http://localhost:3000/vnpay-result?result=false";
+                        var failUrl = $"http://www.nhahangbepkhoi.shop/vnpay-result?result=false";
                         return Redirect(failUrl);
                     }
                 }
