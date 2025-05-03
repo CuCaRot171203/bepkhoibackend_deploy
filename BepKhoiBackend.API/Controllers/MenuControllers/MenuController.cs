@@ -508,11 +508,11 @@ namespace BepKhoiBackend.API.Controllers.MenuControllers
 
         //Create, update, delete product category function
         [HttpPost("product-category")]
-        public async Task<IActionResult> AddProductCategory([FromQuery] int id, [FromQuery] string title)
+        public async Task<IActionResult> AddProductCategory([FromQuery] string title)
         {
             try
             {
-                await _menuService.AddProductCategoryAsync(id, title);
+                await _menuService.AddProductCategoryAsync(title);
                 return Ok(new { message = "Thêm danh mục thành công." });
             }
             catch (ArgumentException ex)

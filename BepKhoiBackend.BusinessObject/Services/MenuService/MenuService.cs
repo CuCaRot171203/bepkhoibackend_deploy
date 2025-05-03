@@ -691,9 +691,9 @@ namespace BepKhoiBackend.BusinessObject.Services.MenuService
 
 
         //Create, update, delete product category function
-        public Task AddProductCategoryAsync(int productCategoryId, string productCategoryTitle)
+        public Task AddProductCategoryAsync(string productCategoryTitle)
         {
-            return _menuRepository.AddProductCategoryAsync(productCategoryId, productCategoryTitle);
+            return _menuRepository.AddProductCategoryAsync(productCategoryTitle);
         }
 
         public Task UpdateProductCategoryAsync(int productCategoryId, string productCategoryTitle)

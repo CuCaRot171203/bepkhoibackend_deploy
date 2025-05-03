@@ -28,7 +28,7 @@ namespace BepKhoiBackend.BusinessObject.Abstract.MenuBusinessAbstract
         Task<IEnumerable<MenuQrDto>> GetAllMenuQrAsync();
 
         //Create, update, delete product category function
-        Task AddProductCategoryAsync(int productCategoryId, string productCategoryTitle);
+        Task AddProductCategoryAsync(string productCategoryTitle);
         Task UpdateProductCategoryAsync(int productCategoryId, string productCategoryTitle);
         Task SoftDeleteProductCategoryAsync(int productCategoryId);
     }

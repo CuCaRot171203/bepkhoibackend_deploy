@@ -274,7 +274,7 @@ public class MenuRepository : RepositoryBase, IMenuRepository
 
 
     //Create, update, delete product category function
-    public async Task AddProductCategoryAsync(int productCategoryId, string productCategoryTitle)
+    public async Task AddProductCategoryAsync(string productCategoryTitle)
     {
         if (string.IsNullOrWhiteSpace(productCategoryTitle))
             throw new ArgumentException("Tên danh mục không được để trống.");
@@ -291,7 +291,6 @@ public class MenuRepository : RepositoryBase, IMenuRepository
 
         var newCategory = new ProductCategory
         {
-            ProductCategoryId = productCategoryId,
             ProductCategoryTitle = productCategoryTitle.Trim(),
             IsDelete = false
         };
