@@ -199,7 +199,7 @@ namespace BepKhoiBackend.API.Controllers.CustomerControllers
                 await _customerService.UpdateCustomerAsync(customerId, phone, customerName);
                 return Ok(new { message = "Customer updated successfully." });
             }
-            catch (InvalidOperationException ex)
+            catch (InvalidOperationException)
             {
                 return BadRequest(new { message = "Customer not found or exist phone number."});
             }

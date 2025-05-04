@@ -106,6 +106,7 @@ namespace BepKhoiBackend.DataAccess.Repository.CustomerRepository
                 {
                     throw new ArgumentException($"Exist phone number.");
                 }
+                customer.CustomerName = customerName.Trim();
                 _context.Customers.Update(customer);
                 await _context.SaveChangesAsync();
             }
